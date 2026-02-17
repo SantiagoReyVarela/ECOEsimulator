@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Intentando cargar escena: Inicio");
         SceneManager.LoadScene("Inicio");
+
         Debug.Log("Carga de escena Inicio ejecutada");
     }
 
@@ -14,6 +15,7 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Intentando cargar escena: Seleccion");
         SceneManager.LoadScene("Seleccion");
+
         Debug.Log("Carga de escena Seleccion ejecutada");
     }
 
@@ -21,6 +23,7 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Intentando cargar escena: Creditos");
         SceneManager.LoadScene("Creditos");
+
         Debug.Log("Carga de escena Creditos ejecutada");
     }
 
@@ -28,20 +31,23 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Intentando cargar escena: Config");
         SceneManager.LoadScene("Config");
+
         Debug.Log("Carga de escena Config ejecutada");
     }
 
     public void ScenePartida()
     {
-        Debug.Log("Intentando cargar escena: Partida");
-        SceneManager.LoadScene("Partida");
-        Debug.Log("Carga de escena Partida ejecutada");
+        Debug.Log("Intentando cargar escena: Gameplay");
+        SceneManager.LoadScene("Gameplay");
+
+        Debug.Log("Carga de escena Gameplay ejecutada");
     }
 
     public void QuitGame()
     {
         Debug.Log("Botón salir pulsado");
         Application.Quit();
+
         Debug.Log("Application.Quit() ejecutado");
     }
 }
