@@ -8,29 +8,33 @@ public abstract class ObjInteractive : MonoBehaviour
 
     protected bool playerInRange = false;
 
-    // Se llama cuando el jugador presiona E
     public virtual void Interact()
     {
         if (!canInteract) return;
-
         Debug.Log($"Interacción con {gameObject.name}");
     }
 
-    // Se llama cuando el jugador entra en el trigger
     public virtual void OnPlayerEnter()
     {
         playerInRange = true;
 
-        // poner codigo para cuando el jugador esté en el rango
+        // ← Aquí mostramos el mensaje
+        if (InteractionPromptUI.Instance != null)
+        {
+            InteractionPromptUI.Instance.Show(interactionMessage);
+        }
 
         Debug.Log(interactionMessage);
     }
 
-    // Se llama cuando el jugador sale del trigger
     public virtual void OnPlayerExit()
     {
         playerInRange = false;
 
-        // ocultar lo que sea que se muestre al acercarnos al objeto
+        // ← Aquí ocultamos el mensaje
+        if (InteractionPromptUI.Instance != null)
+        {
+            InteractionPromptUI.Instance.Hide();
+        }
     }
 }
