@@ -6,6 +6,21 @@ public class NewGameUI : MonoBehaviour
 {
     public TMP_InputField nameInput;
 
+    public void SelectEasy()
+    {
+        GameManager.Instance.difficulty = Difficulty.Easy;
+    }
+
+    public void SelectNormal()
+    {
+        GameManager.Instance.difficulty = Difficulty.Normal;
+    }
+
+    public void SelectHard()
+    {
+        GameManager.Instance.difficulty = Difficulty.Hard;
+    }
+
     public void ConfirmName()
     {
         string enteredName = nameInput.text;
