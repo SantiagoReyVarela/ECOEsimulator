@@ -4,28 +4,18 @@ using System.Collections;
 public class Door : ObjInteractive
 {
     private bool isOpen = false;
-<<<<<<<< HEAD:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/store/Door.cs
     private bool isMoving = false;
-
-    [SerializeField] private Transform doorPivot;
-    [SerializeField] private float openAngle = -90f; 
     //cambiarlo entre positivo/negativo si quieres que gire al otro lado
 
-========
 
     [SerializeField] private Transform doorPivot;
     [SerializeField] private float openAngle = -90f;
->>>>>>>> santiago:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/objects/Door.cs
     [SerializeField] private float speed = 5f;
 
     private Quaternion closedRotation;
     private Quaternion openRotation;
-
-<<<<<<<< HEAD:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/store/Door.cs
-========
     private Coroutine currentRotationCoroutine;
-
->>>>>>>> santiago:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/objects/Door.cs
+    
     private void Start()
     {
         closedRotation = doorPivot.rotation;
@@ -36,12 +26,10 @@ public class Door : ObjInteractive
 
     public override void Interact()
     {
-<<<<<<<< HEAD:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/store/Door.cs
         if (!canInteract || isMoving) return;
 
         isOpen = !isOpen;
         StartCoroutine(RotateDoor(isOpen ? openRotation : closedRotation));
-========
         if (!canInteract) return;
 
         // Alternamos estado
@@ -57,16 +45,12 @@ public class Door : ObjInteractive
         currentRotationCoroutine = StartCoroutine(
             RotateDoor(isOpen ? openRotation : closedRotation)
         );
->>>>>>>> santiago:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/objects/Door.cs
     }
 
     private IEnumerator RotateDoor(Quaternion targetRotation)
     {
-<<<<<<<< HEAD:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/store/Door.cs
         isMoving = true;
 
-========
->>>>>>>> santiago:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/objects/Door.cs
         while (Quaternion.Angle(doorPivot.rotation, targetRotation) > 0.1f)
         {
             doorPivot.rotation = Quaternion.Slerp(
@@ -79,10 +63,8 @@ public class Door : ObjInteractive
         }
 
         doorPivot.rotation = targetRotation;
-<<<<<<<< HEAD:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/store/Door.cs
         isMoving = false;
-========
+
         currentRotationCoroutine = null;
->>>>>>>> santiago:ECOE sim/Assets/ScriptsSantiago(PendienteDeMover)/Object/objects/Door.cs
     }
 }
