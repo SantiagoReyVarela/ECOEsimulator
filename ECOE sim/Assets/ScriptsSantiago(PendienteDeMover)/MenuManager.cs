@@ -35,12 +35,20 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Carga de escena Config ejecutada");
     }
 
+    public void SceneNuevaPartida()
+    {
+        Debug.Log("Intentando cargar escena: NuevaPartida");
+        SceneManager.LoadScene("NuevaPartida");
+
+        Debug.Log("Carga de escena NuevaPartida ejecutada");
+    }
+
     public void ScenePartida()
     {
-        Debug.Log("Intentando cargar escena: Gameplay");
-        SceneManager.LoadScene("Gameplay");
+        Debug.Log("Intentando cargar escena: Partida");
+        SceneManager.LoadScene("Partida");
 
-        Debug.Log("Carga de escena Gameplay ejecutada");
+        Debug.Log("Carga de escena Partida ejecutada");
     }
 
     public void QuitGame()
