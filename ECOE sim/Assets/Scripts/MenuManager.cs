@@ -45,10 +45,10 @@ public class MenuManager : MonoBehaviour
 
     public void ScenePartida()
     {
-        Debug.Log("Intentando cargar escena: Gameplay");
-        SceneManager.LoadScene("Gameplay");
+        Debug.Log("Intentando cargar escena: Partida");
+        SceneManager.LoadScene("Partida");
 
-        Debug.Log("Carga de escena Gameplay ejecutada");
+        Debug.Log("Carga de escena Partida ejecutada");
     }
 
     public void QuitGame()
