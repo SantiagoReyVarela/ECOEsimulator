@@ -6500,29 +6500,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1029723238016750576, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1029723238016750576, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f8203983ff9f6b94f8c24c0c06146d09, type: 2}
-    - target: {fileID: 1029723238016750576, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f8203983ff9f6b94f8c24c0c06146d09, type: 2}
-    - target: {fileID: 1029723238016750576, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: 'm_Materials.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f8203983ff9f6b94f8c24c0c06146d09, type: 2}
     - target: {fileID: 3877152260762383895, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
       propertyPath: m_Name
       value: WallDoorCorridor (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877152260762383895, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9127263941038211244, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21459,29 +21439,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1029723238016750576, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1029723238016750576, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f8203983ff9f6b94f8c24c0c06146d09, type: 2}
-    - target: {fileID: 1029723238016750576, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f8203983ff9f6b94f8c24c0c06146d09, type: 2}
-    - target: {fileID: 1029723238016750576, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: 'm_Materials.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f8203983ff9f6b94f8c24c0c06146d09, type: 2}
     - target: {fileID: 3877152260762383895, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
       propertyPath: m_Name
       value: WallDoorCorridor (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877152260762383895, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9127263941038211244, guid: 057739744aaace54e884a8cd7e7f8865, type: 3}
       propertyPath: m_LocalPosition.x
