@@ -2081,7 +2081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.163
+      value: -2.142
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5677,10 +5677,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 941379585211747961, guid: d5b07f9d684f9ca4ea5f0039528478bc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 7257677482256652066, guid: d5b07f9d684f9ca4ea5f0039528478bc, type: 3}
       propertyPath: m_Name
       value: RackCoat
@@ -8033,6 +8029,10 @@ PrefabInstance:
     - target: {fileID: 2811819553445636177, guid: d130ff955e5584943a778cd84b4b06e6, type: 3}
       propertyPath: m_Name
       value: Cupboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811819553445636177, guid: d130ff955e5584943a778cd84b4b06e6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -14060,9 +14060,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 941379585211747961, guid: ce0ed611d02118647bf85a4c2551b591, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7257677482256652066, guid: ce0ed611d02118647bf85a4c2551b591, type: 3}
       propertyPath: m_Name
       value: WheelChair (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257677482256652066, guid: ce0ed611d02118647bf85a4c2551b591, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7822578935846571024, guid: ce0ed611d02118647bf85a4c2551b591, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14551,9 +14559,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3366683416252354850, guid: 1fe8a69ff9abfe74bb213f77d058832d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3809293049249168674, guid: 1fe8a69ff9abfe74bb213f77d058832d, type: 3}
       propertyPath: m_Name
       value: Bin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809293049249168674, guid: 1fe8a69ff9abfe74bb213f77d058832d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17091,7 +17107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.155
+      value: -8.121
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22817,9 +22833,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1096013081847976130, guid: e43527fadd5c9574d95a2197d91d6db7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1601539479522455548, guid: e43527fadd5c9574d95a2197d91d6db7, type: 3}
       propertyPath: m_Name
       value: ChairDesk (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601539479522455548, guid: e43527fadd5c9574d95a2197d91d6db7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6617705282089323470, guid: e43527fadd5c9574d95a2197d91d6db7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26374,9 +26398,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1096013081847976130, guid: e43527fadd5c9574d95a2197d91d6db7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1601539479522455548, guid: e43527fadd5c9574d95a2197d91d6db7, type: 3}
       propertyPath: m_Name
       value: ChairDesk (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601539479522455548, guid: e43527fadd5c9574d95a2197d91d6db7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6617705282089323470, guid: e43527fadd5c9574d95a2197d91d6db7, type: 3}
       propertyPath: m_LocalPosition.x
