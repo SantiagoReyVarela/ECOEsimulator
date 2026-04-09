@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1394511504491233659}
   - component: {fileID: 690072234356246012}
   - component: {fileID: 4600394303414403622}
+  - component: {fileID: 2968780857831735660}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -27,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200665674465046476}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4716651624641704795}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &1394511504491233659
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -112,6 +113,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2968780857831735660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200665674465046476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36988d9277d61fe46950ec645292b5dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NumberController
+  filas: 4
+  columnas: 4
+  numeroActual: 1
 --- !u!1 &2563517316465848625
 GameObject:
   m_ObjectHideFlags: 0

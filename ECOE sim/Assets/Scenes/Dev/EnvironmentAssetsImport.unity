@@ -773,10 +773,18 @@ PrefabInstance:
     - target: {fileID: 690072234356246012, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a17ac070491f1754184e7d6b9aed6701, type: 2}
+      objectReference: {fileID: 2100000, guid: cd7a5b6b4cb2baf4c81205113bc257f7, type: 2}
     - target: {fileID: 2563517316465848625, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_Name
       value: NumberCinic1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968780857831735660, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
+      propertyPath: columnas
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968780857831735660, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
+      propertyPath: numeroActual
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -792,23 +800,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -13902,17 +13910,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: NumberCinic1
       objectReference: {fileID: 0}
-    - target: {fileID: 3035969631045485375, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
+    - target: {fileID: 2968780857831735660, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
+      propertyPath: filas
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 3035969631045485375, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
+    - target: {fileID: 2968780857831735660, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
+      propertyPath: columnas
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 3035969631045485375, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+    - target: {fileID: 2968780857831735660, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
+      propertyPath: numeroActual
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16636,10 +16644,14 @@ PrefabInstance:
     - target: {fileID: 690072234356246012, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 23b80841af887b74c9abdeefd6d11c27, type: 2}
+      objectReference: {fileID: 2100000, guid: cd7a5b6b4cb2baf4c81205113bc257f7, type: 2}
     - target: {fileID: 2563517316465848625, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_Name
       value: NumberCinic1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968780857831735660, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
+      propertyPath: numeroActual
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16655,23 +16667,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4716651624641704795, guid: fabfa7f5fece9c749bff249eb7f3fd67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
