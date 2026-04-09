@@ -12,7 +12,7 @@ public class NumberController : MonoBehaviour
     private Renderer _renderer;
     private MaterialPropertyBlock _propBlock;
 
-    void OnValidate() // Esto hace que el número cambie en tiempo real en el editor
+    void OnValidate()
     {
         ActualizarNumero();
     }
@@ -22,24 +22,25 @@ public class NumberController : MonoBehaviour
         if (_renderer == null) _renderer = GetComponent<Renderer>();
         if (_propBlock == null) _propBlock = new MaterialPropertyBlock();
 
-        // 1. Obtener la propiedad del bloque actual
         _renderer.GetPropertyBlock(_propBlock);
 
-        // 2. Lógica matemática para el Offset (Matriz 4x4)
-        // Calculamos en qué fila y columna está el número
-        int indiceCero = numeroActual; // Pasamos de 1-16 a 0-15
-        int col = indiceCero % columnas;
-        int fila = indiceCero / columnas;
+        // 1. Convertimos el número (1-16) a un índice base cero (0-15)
+        int indice = numeroActual - 1;
 
-        // Calculamos el desplazamiento (0.25 si es 4x4)
-        float offsetX = (float)col / columnas;
-        float offsetY = 1.0f - ((float)fila / filas);
-        // El eje Y en las texturas suele ir de abajo a arriba, por eso la resta
+        // 2. Calculamos columna (X) y fila (Y)
+        int col = indice % columnas;    // Resultado: 0, 1, 2, 3
+        int fila = indice / columnas;   // Resultado: 0, 1, 2, 3
 
-        // 3. Enviamos el valor al Shader (usando el nombre de referencia)
+        // 3. Cálculo de Offset
+        float offsetX = ((float)col / columnas) ;
+
+        // Invertimos la fila: 
+        // Cuando fila es 0 (arriba), el offset debe ser 0.75
+        // Cuando fila es 3 (abajo), el offset debe ser 0.0
+        float offsetY = 1 - ((float)(fila) / filas) ;
+
+        // 4. Aplicamos al Shader
         _propBlock.SetVector("_Offset", new Vector2(offsetX, offsetY));
-
-        // 4. Aplicamos el bloque al renderer del objeto
         _renderer.SetPropertyBlock(_propBlock);
     }
 }
