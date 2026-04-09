@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9127263941038211244}
   m_Layer: 0
-  m_Name: ClinicWallDoor 1
+  m_Name: WallDoorExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8508401612338758260}
-  m_Mesh: {fileID: -2239393978635137408, guid: b893881c334e80f4c845f60726c9cbfc, type: 3}
+  m_Mesh: {fileID: -6106498718550000161, guid: b893881c334e80f4c845f60726c9cbfc, type: 3}
 --- !u!23 &1029723238016750576
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -99,6 +99,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: c09be2d0b0469a344ba067d8d4226a3b, type: 2}
+  - {fileID: 2100000, guid: c09be2d0b0469a344ba067d8d4226a3b, type: 2}
+  - {fileID: 2100000, guid: c09be2d0b0469a344ba067d8d4226a3b, type: 2}
   - {fileID: 2100000, guid: c09be2d0b0469a344ba067d8d4226a3b, type: 2}
   - {fileID: 2100000, guid: c09be2d0b0469a344ba067d8d4226a3b, type: 2}
   - {fileID: 2100000, guid: c09be2d0b0469a344ba067d8d4226a3b, type: 2}
