@@ -32,6 +32,7 @@ public class EnvironmentManager : MonoBehaviour
     {
         Instance = this;
         InicializarPostProcesado();
+        ReescanearEscena();
     }
 
     void OnValidate()
@@ -47,6 +48,13 @@ public class EnvironmentManager : MonoBehaviour
             ActualizarTodo();
             _isDirty = false;
         }
+    }
+    public void ReescanearEscena()
+    {
+        _objetosRegistrados.Clear();
+        ModularColorTint[] objetos = FindObjectsOfType<ModularColorTint>();
+        foreach (var obj in objetos) RegistrarObjeto(obj);
+        ActualizarTodo();
     }
 
     private void InicializarPostProcesado()
