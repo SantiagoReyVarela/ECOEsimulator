@@ -3,24 +3,21 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ModularColorTint : MonoBehaviour
 {
-    private static readonly int TintPropID = Shader.PropertyToID("_BaseTint");
-    public enum RoomType { Clinica, Pasillo }
-    public RoomType ubicacion;
+    private static readonly int TintPropID = Shader.PropertyToID("_GlobalColorArquitecture");
 
-    [Header("Colores Predefinidos")]
-    public Color colorClinica = new Color(0.1f, 0.2f, 0.5f); // Azul Marino
-    public Color colorPasillo = new Color(0.1f, 0.5f, 0.4f); // Azul Verdoso
+    public enum RoomType { Clinica, Pasillo }
+
+    [Header("Configuración de Ubicación")]
+    public RoomType ubicacion;
 
     private Renderer _renderer;
     private MaterialPropertyBlock _propBlock;
 
-    // Esta función se activa SOLAMENTE cuando tocas algo en el Inspector
     void OnValidate()
     {
         UpdateColor();
     }
 
-    // Esta se activa cuando el objeto aparece en escena
     void Awake()
     {
         UpdateColor();
@@ -31,12 +28,18 @@ public class ModularColorTint : MonoBehaviour
         if (_renderer == null) _renderer = GetComponent<Renderer>();
         if (_propBlock == null) _propBlock = new MaterialPropertyBlock();
 
+        // 1. Buscamos el color en el Manager
+        Color colorFinal = Color.white; // Color por defecto si no hay manager
+
+        if (EnvironmentManager.Instance != null)
+        {
+            colorFinal = (ubicacion == RoomType.Clinica)
+                ? EnvironmentManager.Instance.colorClinica
+                : EnvironmentManager.Instance.colorPasillo;
+        }
+
+        // 2. Aplicamos el color al material de forma eficiente
         _renderer.GetPropertyBlock(_propBlock);
-
-        Color colorFinal = (ubicacion == RoomType.Clinica)
-        ? colorFinal = this.colorClinica
-        : colorFinal = this.colorPasillo;
-
         _propBlock.SetColor(TintPropID, colorFinal);
         _renderer.SetPropertyBlock(_propBlock);
     }

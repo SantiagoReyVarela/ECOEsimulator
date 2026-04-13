@@ -40,6 +40,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: a19f029aa3b4bfd4cbe5584f802d7cce, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: 8d4eda4bfdab9834d9a946b65411ebfe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Mask_RGB:
         m_Texture: {fileID: 2800000, guid: 8d4eda4bfdab9834d9a946b65411ebfe, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -50,8 +54,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BUILTIN_AlphaClip: 0
+    - _BUILTIN_Blend: 0
+    - _BUILTIN_CullMode: 2
+    - _BUILTIN_DstBlend: 0
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
+    - _BUILTIN_SrcBlend: 1
+    - _BUILTIN_Surface: 0
+    - _BUILTIN_ZTest: 4
+    - _BUILTIN_ZWrite: 1
+    - _BUILTIN_ZWriteControl: 0
     m_Colors:
     - _BaseTint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -54,7 +54,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ModularColorTint
   ubicacion: 0
-  colorClinica: {r: 0.1, g: 0.2, b: 0.5, a: 1}
-  colorPasillo: {r: 0.1, g: 0.5, b: 0.4, a: 1}
+  colorClinica: {r: 0.29459342, g: 0.27607846, b: 0.5019608, a: 1}
+  colorPasillo: {r: 0.27607846, g: 0.5019608, b: 0.4443829, a: 1}
 --- !u!1 &7635030954929054709
 GameObject:
   m_ObjectHideFlags: 0
