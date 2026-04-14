@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Rendering.PostProcessing;
 
-[ExecuteInEditMode]
 public class EnvironmentManager : MonoBehaviour
 {
     public static EnvironmentManager Instance;
@@ -38,11 +37,32 @@ public class EnvironmentManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+
+        // LIMPIEZA PREVENTIVA: 
+        // Esto destruye cualquier instancia de material que no esté guardada en el disco
+        // y que Unity haya dejado "flotando" en la escena.
+        Resources.UnloadUnusedAssets();
+        System.GC.Collect();
+
         InicializarPostProcesado();
-        ReescanearEscena();
+
+        if (_objetosRegistrados.Count == 0)
+        {
+            ReescanearEscena();
+        }
     }
 
     void OnValidate() { _isDirty = true; }
+
+    void OnDisable()
+    {
+        // Esto se ejecuta al salir del Play o desactivar el script
+        // Es vital para liberar la memoria de los materiales duplicados
+        if (!Application.isPlaying)
+        {
+            Resources.UnloadUnusedAssets();
+        }
+    }
 
     void Update()
     {
@@ -88,7 +108,7 @@ public class EnvironmentManager : MonoBehaviour
     private void ActualizarEfectosVisuales()
     {
         // Prevención de NullReference: Si el volumen o el perfil se pierden, salimos
-        if (volumenGlobal == null || volumenGlobal.profile == null) return;
+        if (volumenGlobal == null || volumenGlobal.sharedProfile == null) return;
 
         // Animación de Vignette (Pulso de alerta)
         if (_vignette != null)
@@ -119,10 +139,10 @@ public class EnvironmentManager : MonoBehaviour
 
     private void InicializarPostProcesado()
     {
-        if (volumenGlobal != null && volumenGlobal.profile != null)
+        if (volumenGlobal != null && volumenGlobal.sharedProfile != null)
         {
-            volumenGlobal.profile.TryGetSettings(out _vignette);
-            volumenGlobal.profile.TryGetSettings(out _colorGrading);
+            volumenGlobal.sharedProfile.TryGetSettings(out _vignette);
+            volumenGlobal.sharedProfile.TryGetSettings(out _colorGrading);
         }
     }
 

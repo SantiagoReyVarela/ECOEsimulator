@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class ModularColorTint : MonoBehaviour
 {
     // Tu variable única del Shader
