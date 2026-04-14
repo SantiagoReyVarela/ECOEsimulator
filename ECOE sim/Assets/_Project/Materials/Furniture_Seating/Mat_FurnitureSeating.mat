@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mat_FurnitureSeating
-  m_Shader: {fileID: -6465566751694194690, guid: 8b9f3690e11fddd4497585cf7eb3bebb, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 2aee5035b5008f642867f793bf65b864, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -39,7 +39,10 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    m_Colors: []
+    - _FresnelPower: 4
+    - _HighlightIntensity: 0
+    m_Colors:
+    - _SelectionColor: {r: 0.1828053, g: 0.4216735, b: 0.490566, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &212144978799351779
