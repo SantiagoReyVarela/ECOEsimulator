@@ -101,11 +101,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 16baabedea225b249aad79d5279afd14, type: 2}
-  - {fileID: 2100000, guid: 16baabedea225b249aad79d5279afd14, type: 2}
-  - {fileID: 2100000, guid: 16baabedea225b249aad79d5279afd14, type: 2}
-  - {fileID: 2100000, guid: 16baabedea225b249aad79d5279afd14, type: 2}
-  - {fileID: 2100000, guid: 16baabedea225b249aad79d5279afd14, type: 2}
-  - {fileID: 2100000, guid: 16baabedea225b249aad79d5279afd14, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,4 +157,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4083c642ff0ae4cb2be6df5f8dd27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ModularColorTint
-  colorDeInstancia: {r: 0.26330546, g: 0.5754717, b: 0.31533313, a: 1}
+  ubicacion: 0
