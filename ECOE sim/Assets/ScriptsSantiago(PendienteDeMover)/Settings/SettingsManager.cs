@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class SettingsManager : MonoBehaviour
 {
     public static SettingsManager Instance;
@@ -24,5 +26,54 @@ public class SettingsManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        LoadSettings();
+        ApplySettings();
+    }
+
+    // -------------------------
+    // APLICAR CAMBIOS
+    // -------------------------
+    public void ApplySettings()
+    {
+        // Pantalla
+        Screen.fullScreenMode = screenMode;
+
+        // HUD (si existe en escena)
+        GameObject hud = GameObject.FindWithTag("HUD");
+        if (hud != null)
+            hud.SetActive(showHUD);
+    }
+
+    // -------------------------
+    // GUARDAR
+    // -------------------------
+    public void SaveSettings()
+    {
+        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+
+        PlayerPrefs.SetInt("ShowHUD", showHUD ? 1 : 0);
+        PlayerPrefs.SetInt("ShowControls", showControls ? 1 : 0);
+
+        PlayerPrefs.SetInt("ScreenMode", (int)screenMode);
+
+        PlayerPrefs.Save();
+    }
+
+    // -------------------------
+    // CARGAR
+    // -------------------------
+    void LoadSettings()
+    {
+        masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+
+        showHUD = PlayerPrefs.GetInt("ShowHUD", 1) == 1;
+        showControls = PlayerPrefs.GetInt("ShowControls", 0) == 1;
+
+        screenMode = (FullScreenMode)PlayerPrefs.GetInt("ScreenMode", (int)FullScreenMode.FullScreenWindow);
     }
 }
