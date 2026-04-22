@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class OptionsUI : MonoBehaviour
 {
@@ -17,9 +18,20 @@ public class OptionsUI : MonoBehaviour
 
     [Header("Panels")]
     public GameObject controlsPanel;
+    public GameObject hud; // 🔥 referencia directa
+
+    SettingsManager settings;
 
     void Start()
     {
+        settings = FindObjectOfType<SettingsManager>();
+
+        if (settings == null)
+        {
+            Debug.LogError("SettingsManager no encontrado en la escena");
+            return;
+        }
+
         LoadToUI();
     }
 
@@ -28,18 +40,19 @@ public class OptionsUI : MonoBehaviour
     // -------------------------
     void LoadToUI()
     {
-        var s = SettingsManager.Instance;
+        masterSlider.value = settings.masterVolume;
+        sfxSlider.value = settings.sfxVolume;
+        musicSlider.value = settings.musicVolume;
 
-        masterSlider.value = s.masterVolume;
-        sfxSlider.value = s.sfxVolume;
-        musicSlider.value = s.musicVolume;
+        hudToggle.isOn = settings.showHUD;
+        controlsToggle.isOn = settings.showControls;
 
-        hudToggle.isOn = s.showHUD;
-        controlsToggle.isOn = s.showControls;
+        screenDropdown.value = GetScreenModeIndex(settings.screenMode);
 
-        screenDropdown.value = GetScreenModeIndex(s.screenMode);
+        controlsPanel.SetActive(settings.showControls);
 
-        controlsPanel.SetActive(s.showControls);
+        if (hud != null)
+            hud.SetActive(settings.showHUD);
     }
 
     // -------------------------
@@ -47,17 +60,20 @@ public class OptionsUI : MonoBehaviour
     // -------------------------
     public void SetMasterVolume(float value)
     {
-        SettingsManager.Instance.masterVolume = value;
+        settings.masterVolume = value;
+        Debug.Log("Master Volume cambiado a: " + value);
     }
 
     public void SetSFXVolume(float value)
     {
-        SettingsManager.Instance.sfxVolume = value;
+        settings.sfxVolume = value;
+        Debug.Log("SFX Volume cambiado a: " + value);
     }
 
     public void SetMusicVolume(float value)
     {
-        SettingsManager.Instance.musicVolume = value;
+        settings.musicVolume = value;
+        Debug.Log("Music Volume cambiado a: " + value);
     }
 
     // -------------------------
@@ -80,8 +96,10 @@ public class OptionsUI : MonoBehaviour
                 break;
         }
 
-        SettingsManager.Instance.screenMode = mode;
+        settings.screenMode = mode;
         Screen.fullScreenMode = mode;
+
+        Debug.Log("Modo de pantalla cambiado a: " + mode);
     }
 
     int GetScreenModeIndex(FullScreenMode mode)
@@ -100,24 +118,38 @@ public class OptionsUI : MonoBehaviour
     // -------------------------
     public void ToggleHUD(bool value)
     {
-        SettingsManager.Instance.showHUD = value;
+        settings.showHUD = value;
 
-        GameObject hud = GameObject.FindWithTag("HUD");
         if (hud != null)
             hud.SetActive(value);
+
+        Debug.Log("HUD " + (value ? "activado" : "desactivado"));
     }
 
     public void ToggleControls(bool value)
     {
-        SettingsManager.Instance.showControls = value;
-        controlsPanel.SetActive(value);
+        settings.showControls = value;
+
+        if (controlsPanel != null)
+            controlsPanel.SetActive(value);
+
+        
     }
 
-    // -------------------------
+    public void ToggleObject(GameObject obj)
+    {
+        if (obj != null)
+            obj.SetActive(!obj.activeSelf);
+        
+        Debug.Log("Panel de controles " + (value ? "mostrado" : "ocultado"));
+    }
+
+        // -------------------------
     // GUARDAR (botón aplicar)
     // -------------------------
     public void ApplySettings()
     {
-        SettingsManager.Instance.SaveSettings();
+        settings.SaveSettings();
+        Debug.Log("Configuración guardada");
     }
 }
