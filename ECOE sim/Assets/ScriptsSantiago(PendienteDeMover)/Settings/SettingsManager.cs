@@ -18,7 +18,7 @@ public class SettingsManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -31,23 +31,15 @@ public class SettingsManager : MonoBehaviour
         ApplySettings();
     }
 
-    // -------------------------
-    // APLICAR CAMBIOS
-    // -------------------------
     public void ApplySettings()
     {
-        // Pantalla
         Screen.fullScreenMode = screenMode;
 
-        // HUD (si existe en escena)
         GameObject hud = GameObject.FindWithTag("HUD");
         if (hud != null)
             hud.SetActive(showHUD);
     }
 
-    // -------------------------
-    // GUARDAR
-    // -------------------------
     public void SaveSettings()
     {
         PlayerPrefs.SetFloat("MasterVolume", masterVolume);
@@ -62,9 +54,6 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    // -------------------------
-    // CARGAR
-    // -------------------------
     void LoadSettings()
     {
         masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
@@ -74,6 +63,9 @@ public class SettingsManager : MonoBehaviour
         showHUD = PlayerPrefs.GetInt("ShowHUD", 1) == 1;
         showControls = PlayerPrefs.GetInt("ShowControls", 0) == 1;
 
-        screenMode = (FullScreenMode)PlayerPrefs.GetInt("ScreenMode", (int)FullScreenMode.FullScreenWindow);
+        screenMode = (FullScreenMode)PlayerPrefs.GetInt(
+            "ScreenMode",
+            (int)FullScreenMode.FullScreenWindow
+        );
     }
 }
