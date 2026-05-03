@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ObjInteractive : MonoBehaviour
+public class ObjInteractive : MonoBehaviour
 {
     [Header("Interaction Settings")]
     public bool canInteract = true;
@@ -8,30 +8,54 @@ public abstract class ObjInteractive : MonoBehaviour
 
     protected bool playerInRange = false;
 
+    // 🔗 Referencia opcional al objeto que realmente ejecuta la interacción
+    [SerializeField] private MonoBehaviour interactionTarget;
+
+    private IInteractable interactable;
+
+    private void Awake()
+    {
+        // Intentamos convertir el target a IInteractable
+        if (interactionTarget != null)
+        {
+            interactable = interactionTarget as IInteractable;
+        }
+    }
+
     public virtual void Interact()
     {
         if (!canInteract) return;
-        Debug.Log($"Interacción con {gameObject.name}");
+
+        // Si hay un target (ej: Door), usamos su lógica
+        if (interactable != null)
+        {
+            interactable.Interact();
+        }
+        else
+        {
+            Debug.Log($"Interacción con {gameObject.name}");
+        }
     }
 
     public virtual void OnPlayerEnter()
+{
+    Debug.Log("OnPlayerEnter llamado");
+
+    if (InteractionPromptUI.Instance == null)
     {
-        playerInRange = true;
-
-        // ← Aquí mostramos el mensaje
-        if (InteractionPromptUI.Instance != null)
-        {
-            InteractionPromptUI.Instance.Show(interactionMessage);
-        }
-
-        Debug.Log(interactionMessage);
+        Debug.LogError("Instance es NULL");
     }
+    else
+    {
+        Debug.Log("Instance OK");
+        InteractionPromptUI.Instance.Show(interactionMessage);
+    }
+}
 
     public virtual void OnPlayerExit()
     {
         playerInRange = false;
 
-        // ← Aquí ocultamos el mensaje
         if (InteractionPromptUI.Instance != null)
         {
             InteractionPromptUI.Instance.Hide();

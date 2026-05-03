@@ -25,27 +25,20 @@ public class Door : ObjInteractive
     }
 
     public override void Interact()
+{
+    if (!canInteract || isMoving) return;
+
+    isOpen = !isOpen;
+
+    if (currentRotationCoroutine != null)
     {
-        if (!canInteract || isMoving) return;
-
-        isOpen = !isOpen;
-        StartCoroutine(RotateDoor(isOpen ? openRotation : closedRotation));
-        if (!canInteract) return;
-
-        // Alternamos estado
-        isOpen = !isOpen;
-
-        // Si ya hay una animación en curso, la detenemos
-        if (currentRotationCoroutine != null)
-        {
-            StopCoroutine(currentRotationCoroutine);
-        }
-
-        // Iniciamos nueva animación hacia el nuevo estado
-        currentRotationCoroutine = StartCoroutine(
-            RotateDoor(isOpen ? openRotation : closedRotation)
-        );
+        StopCoroutine(currentRotationCoroutine);
     }
+
+    currentRotationCoroutine = StartCoroutine(
+        RotateDoor(isOpen ? openRotation : closedRotation)
+    );
+}
 
     private IEnumerator RotateDoor(Quaternion targetRotation)
     {
