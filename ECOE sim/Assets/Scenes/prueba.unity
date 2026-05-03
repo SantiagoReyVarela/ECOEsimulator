@@ -547,7 +547,6 @@ GameObject:
   m_Component:
   - component: {fileID: 793997093}
   - component: {fileID: 793997094}
-  - component: {fileID: 793997095}
   m_Layer: 0
   m_Name: door trigger
   m_TagString: Untagged
@@ -593,21 +592,6 @@ CapsuleCollider:
   m_Height: 10.12
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &793997095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793997092}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd0097bd043d114185d7df5356c2c3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjInteractive
-  canInteract: 1
-  interactionMessage: Pulsa E para interactuar
-  interactionTarget: {fileID: 1661446354}
 --- !u!1 &814565683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjInteractive
   canInteract: 1
-  interactionMessage: Pulsa E para interactuar
+  interactionMessage: Pulsa E para abrir
   interactionTarget: {fileID: 1661446354}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
