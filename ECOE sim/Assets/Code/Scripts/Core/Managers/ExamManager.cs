@@ -97,12 +97,16 @@ public class ExamManager : MonoBehaviour
     void LoadQuestions()
     {
         TextAsset jsonFile =
-            Resources.Load<TextAsset>("questions");
-
+            Resources.Load<TextAsset>("questions"); 
+            // cambiarle el nombre para que coincida con el JSON que desees >:)
+            // ARCHIVOS DISPONIBLES:
+            // "infantil" : preguntas sencillisimas que cualquiera sabe responder sobre cultura general
+            // "ECOE" : preguntas del ECOE
+            // lo suyo sería poner aquí archivos con preguntas de distintas dificultades
         if (jsonFile == null)
         {
             Debug.LogError(
-                "No se encontró questions.json en Resources"
+                "No se encontró el archivo .json en Resources"
             );
 
             return;
@@ -114,6 +118,11 @@ public class ExamManager : MonoBehaviour
             );
 
         allQuestions = database.questions;
+
+        Debug.Log(
+            "Preguntas cargadas: "
+            + allQuestions.Length
+        );
     }
 
     void GenerateExam()
@@ -180,20 +189,6 @@ public class ExamManager : MonoBehaviour
                 .GetComponentInChildren<TMP_Text>();
 
             buttonText.text = q.answers[i];
-
-            ColorBlock colors =
-                answerButtons[i].colors;
-
-            if (playerAnswers[currentQuestion] == i)
-            {
-                colors.normalColor = Color.green;
-            }
-            else
-            {
-                colors.normalColor = Color.white;
-            }
-
-            answerButtons[i].colors = colors;
         }
 
         if (nextButton != null)
@@ -205,6 +200,11 @@ public class ExamManager : MonoBehaviour
 
     public void SelectAnswer(int answerIndex)
     {
+        Debug.Log(
+            "Botón pulsado: "
+            + answerIndex
+        );
+
         playerAnswers[currentQuestion] =
             answerIndex;
 
@@ -212,8 +212,6 @@ public class ExamManager : MonoBehaviour
         {
             nextButton.interactable = true;
         }
-
-        ShowQuestion();
     }
 
     public void NextQuestion()
