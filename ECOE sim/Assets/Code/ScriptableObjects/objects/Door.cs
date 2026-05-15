@@ -1,53 +1,57 @@
 using UnityEngine;
 using System.Collections;
 
-public class Door : ObjInteractive
+public class Door : ObjInteractive, IInteractable
 {
     private bool isOpen = false;
     private bool isMoving = false;
-    //cambiarlo entre positivo/negativo si quieres que gire al otro lado
-
 
     [SerializeField] private Transform doorPivot;
-    [SerializeField] private float openAngle = -90f;
+    [SerializeField] private float openAngle = 90f;
     [SerializeField] private float speed = 5f;
 
     private Quaternion closedRotation;
     private Quaternion openRotation;
     private Coroutine currentRotationCoroutine;
-    
-    private void Start()
+
+    void Start()
     {
-        closedRotation = doorPivot.rotation;
+        // Guardamos la rotación inicial (cerrada)
+        closedRotation = doorPivot.localRotation;
+
+        // Calculamos la rotación abierta
         openRotation = Quaternion.Euler(
-            doorPivot.eulerAngles + new Vector3(0, openAngle, 0)
+            doorPivot.localEulerAngles + new Vector3(0, openAngle, 0)
         );
     }
 
     public override void Interact()
-{
-    if (!canInteract || isMoving) return;
-
-    isOpen = !isOpen;
-
-    if (currentRotationCoroutine != null)
     {
-        StopCoroutine(currentRotationCoroutine);
-    }
+        if (!canInteract) return;
 
-    currentRotationCoroutine = StartCoroutine(
-        RotateDoor(isOpen ? openRotation : closedRotation)
-    );
-}
+        // Cambiamos estado SIEMPRE (aunque esté animando)
+        isOpen = !isOpen;
+
+        // Si hay animación en curso, la detenemos
+        if (currentRotationCoroutine != null)
+        {
+            StopCoroutine(currentRotationCoroutine);
+        }
+
+        // Iniciamos nueva animación desde la rotación actual
+        currentRotationCoroutine = StartCoroutine(
+            RotateDoor(isOpen ? openRotation : closedRotation)
+        );
+    }
 
     private IEnumerator RotateDoor(Quaternion targetRotation)
     {
         isMoving = true;
 
-        while (Quaternion.Angle(doorPivot.rotation, targetRotation) > 0.1f)
+        while (Quaternion.Angle(doorPivot.localRotation, targetRotation) > 0.1f)
         {
-            doorPivot.rotation = Quaternion.Slerp(
-                doorPivot.rotation,
+            doorPivot.localRotation = Quaternion.Slerp(
+                doorPivot.localRotation,
                 targetRotation,
                 Time.deltaTime * speed
             );
@@ -55,9 +59,10 @@ public class Door : ObjInteractive
             yield return null;
         }
 
-        doorPivot.rotation = targetRotation;
-        isMoving = false;
+        // Asegura que llega exacto al final
+        doorPivot.localRotation = targetRotation;
 
+        isMoving = false;
         currentRotationCoroutine = null;
     }
 }
