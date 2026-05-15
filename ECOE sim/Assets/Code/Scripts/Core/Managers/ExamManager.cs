@@ -97,11 +97,11 @@ public class ExamManager : MonoBehaviour
     void LoadQuestions()
     {
         TextAsset jsonFile =
-            Resources.Load<TextAsset>("ECOE"); 
+            Resources.Load<TextAsset>("test"); 
             // cambiarle el nombre para que coincida con el JSON que desees >:)
             // ARCHIVOS DISPONIBLES:
             // "infantil" : preguntas sencillisimas que cualquiera sabe responder sobre cultura general
-            // "ECOE" : preguntas del ECOE
+            // "test" : preguntas del ECOE
             // lo suyo sería poner aquí archivos con preguntas de distintas dificultades
         if (jsonFile == null)
         {
