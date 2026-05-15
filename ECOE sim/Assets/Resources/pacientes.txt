@@ -1,0 +1,580 @@
+{
+  "categoria": "Analisis de la marcha",
+  "casos": [
+    {
+      "id": 1,
+      "titulo": "Marcha hemiplejica",
+      "informacionPaciente": {
+        "nombre": "Juan Martinez",
+        "edad": 65,
+        "sexo": "Masculino",
+        "incidentesPrevios": [
+          "Ictus hace 3 meses",
+          "Hipertension arterial"
+        ]
+      },
+      "sintomas": [
+        "Marcha lenta",
+        "Arrastre del antepie derecho",
+        "Circunduccion del miembro inferior derecho",
+        "Espasticidad",
+        "Brazo derecho en flexion"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha festinante",
+          "Marcha del segador",
+          "Marcha antiálgica",
+          "Marcha en tijeras"
+        ],
+        "correcta": 1
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Ataxia",
+          "Hemiplejia",
+          "Parkinson",
+          "Esclerosis multiple"
+        ],
+        "correcta": 1
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Circunduccion de cadera",
+          "Espasticidad",
+          "Apoyo en equino-varo",
+          "Pasos cortos y rapidos"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha del segador",
+        "cuadroPatologicoCorrecto": "Hemiplejia",
+        "manifestacionesCorrectas": [
+          "Circunduccion de cadera",
+          "Espasticidad",
+          "Apoyo en equino-varo"
+        ]
+      }
+    },
+
+    {
+      "id": 2,
+      "titulo": "Marcha festinante",
+      "informacionPaciente": {
+        "nombre": "Carlos Ruiz",
+        "edad": 71,
+        "sexo": "Masculino",
+        "incidentesPrevios": [
+          "Diagnostico previo de Parkinson"
+        ]
+      },
+      "sintomas": [
+        "Pasos cortos y rapidos",
+        "Inclinacion anterior del tronco",
+        "Rigidez",
+        "Arrastre de pies",
+        "Falta de balanceo de brazos"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha festinante",
+          "Marcha en estrella",
+          "Marcha ataxica",
+          "Marcha en estepage"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Hemiplejia",
+          "Parkinson",
+          "Paralisis cerebral",
+          "Ataxia"
+        ],
+        "correcta": 1
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Disminucion de la longitud del paso",
+          "Aumento de la cadencia",
+          "Inclinacion anterior del tronco",
+          "Circunduccion de cadera"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha festinante",
+        "cuadroPatologicoCorrecto": "Parkinson",
+        "manifestacionesCorrectas": [
+          "Disminucion de la longitud del paso",
+          "Aumento de la cadencia",
+          "Inclinacion anterior del tronco"
+        ]
+      }
+    },
+
+    {
+      "id": 3,
+      "titulo": "Marcha ataxica",
+      "informacionPaciente": {
+        "nombre": "Maria Lopez",
+        "edad": 54,
+        "sexo": "Femenino",
+        "incidentesPrevios": [
+          "Consumo cronico de alcohol"
+        ]
+      },
+      "sintomas": [
+        "Inestabilidad al caminar",
+        "Separacion excesiva de los pies",
+        "Oscilaciones del tronco",
+        "Dificultad para mantener el equilibrio"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha ataxica",
+          "Marcha del segador",
+          "Marcha antiálgica",
+          "Marcha festinante"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Ataxia",
+          "Parkinson",
+          "Hemiplejia",
+          "Fascitis plantar"
+        ],
+        "correcta": 0
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Base de sustentacion amplia",
+          "Perdida del equilibrio",
+          "Oscilacion del tronco",
+          "Pasos cortos y rapidos"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha ataxica",
+        "cuadroPatologicoCorrecto": "Ataxia",
+        "manifestacionesCorrectas": [
+          "Base de sustentacion amplia",
+          "Perdida del equilibrio",
+          "Oscilacion del tronco"
+        ]
+      }
+    },
+
+    {
+      "id": 4,
+      "titulo": "Marcha en estepage",
+      "informacionPaciente": {
+        "nombre": "Pedro Sanchez",
+        "edad": 49,
+        "sexo": "Masculino",
+        "incidentesPrevios": [
+          "Lesion del nervio peroneo"
+        ]
+      },
+      "sintomas": [
+        "Elevacion exagerada de la rodilla",
+        "Caida del pie",
+        "Golpe del antepie contra el suelo"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha en estepage",
+          "Marcha festinante",
+          "Marcha en tijeras",
+          "Marcha antiálgica"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Esclerosis multiple",
+          "Lesion nerviosa periferica",
+          "Parkinson",
+          "Hemiplejia"
+        ],
+        "correcta": 1
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Elevacion exagerada de rodilla",
+          "Caida del pie",
+          "Golpe del pie al apoyar",
+          "Espasticidad"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha en estepage",
+        "cuadroPatologicoCorrecto": "Lesion nerviosa periferica",
+        "manifestacionesCorrectas": [
+          "Elevacion exagerada de rodilla",
+          "Caida del pie",
+          "Golpe del pie al apoyar"
+        ]
+      }
+    },
+
+    {
+      "id": 5,
+      "titulo": "Marcha antiálgica",
+      "informacionPaciente": {
+        "nombre": "Lucia Romero",
+        "edad": 42,
+        "sexo": "Femenino",
+        "incidentesPrevios": [
+          "Fascitis plantar"
+        ]
+      },
+      "sintomas": [
+        "Apoyo reducido sobre el pie izquierdo",
+        "Cojera",
+        "Dolor durante la marcha"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha antiálgica",
+          "Marcha festinante",
+          "Marcha del segador",
+          "Marcha en estrella"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Fascitis plantar",
+          "Parkinson",
+          "Hemiplejia",
+          "Ataxia"
+        ],
+        "correcta": 0
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Disminucion del tiempo de apoyo",
+          "Cojera",
+          "Dolor al apoyar",
+          "Pasos rapidos"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha antiálgica",
+        "cuadroPatologicoCorrecto": "Fascitis plantar",
+        "manifestacionesCorrectas": [
+          "Disminucion del tiempo de apoyo",
+          "Cojera",
+          "Dolor al apoyar"
+        ]
+      }
+    },
+
+    {
+      "id": 6,
+      "titulo": "Marcha en tijeras",
+      "informacionPaciente": {
+        "nombre": "Daniel Ortega",
+        "edad": 19,
+        "sexo": "Masculino",
+        "incidentesPrevios": [
+          "Paralisis cerebral infantil"
+        ]
+      },
+      "sintomas": [
+        "Cruce de piernas al caminar",
+        "Espasticidad",
+        "Dificultad de equilibrio"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha en tijeras",
+          "Marcha antiálgica",
+          "Marcha festinante",
+          "Marcha en estrella"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Paralisis cerebral",
+          "Parkinson",
+          "Ataxia",
+          "Hemiplejia"
+        ],
+        "correcta": 0
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Cruce de piernas",
+          "Espasticidad",
+          "Base estrecha",
+          "Inclinacion anterior del tronco"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha en tijeras",
+        "cuadroPatologicoCorrecto": "Paralisis cerebral",
+        "manifestacionesCorrectas": [
+          "Cruce de piernas",
+          "Espasticidad",
+          "Base estrecha"
+        ]
+      }
+    },
+
+    {
+      "id": 7,
+      "titulo": "Marcha vestibular",
+      "informacionPaciente": {
+        "nombre": "Elena Diaz",
+        "edad": 58,
+        "sexo": "Femenino",
+        "incidentesPrevios": [
+          "Vertigos recurrentes"
+        ]
+      },
+      "sintomas": [
+        "Desviacion lateral al caminar",
+        "Inestabilidad",
+        "Mareo"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha vestibular",
+          "Marcha festinante",
+          "Marcha del segador",
+          "Marcha en estepage"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Trastorno vestibular",
+          "Hemiplejia",
+          "Parkinson",
+          "Ataxia"
+        ],
+        "correcta": 0
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Desviacion lateral",
+          "Perdida del equilibrio",
+          "Mareo",
+          "Circunduccion de cadera"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha vestibular",
+        "cuadroPatologicoCorrecto": "Trastorno vestibular",
+        "manifestacionesCorrectas": [
+          "Desviacion lateral",
+          "Perdida del equilibrio",
+          "Mareo"
+        ]
+      }
+    },
+
+    {
+      "id": 8,
+      "titulo": "Marcha miopatica",
+      "informacionPaciente": {
+        "nombre": "Sara Molina",
+        "edad": 36,
+        "sexo": "Femenino",
+        "incidentesPrevios": [
+          "Distrofia muscular"
+        ]
+      },
+      "sintomas": [
+        "Balanceo de pelvis",
+        "Debilidad muscular proximal",
+        "Dificultad para subir escaleras"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha miopatica",
+          "Marcha festinante",
+          "Marcha antiálgica",
+          "Marcha ataxica"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Distrofia muscular",
+          "Parkinson",
+          "Hemiplejia",
+          "Ataxia"
+        ],
+        "correcta": 0
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Balanceo de pelvis",
+          "Debilidad proximal",
+          "Marcha de pato",
+          "Pasos cortos"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha miopatica",
+        "cuadroPatologicoCorrecto": "Distrofia muscular",
+        "manifestacionesCorrectas": [
+          "Balanceo de pelvis",
+          "Debilidad proximal",
+          "Marcha de pato"
+        ]
+      }
+    },
+
+    {
+      "id": 9,
+      "titulo": "Marcha coreica",
+      "informacionPaciente": {
+        "nombre": "Roberto Gil",
+        "edad": 52,
+        "sexo": "Masculino",
+        "incidentesPrevios": [
+          "Enfermedad de Huntington"
+        ]
+      },
+      "sintomas": [
+        "Movimientos involuntarios",
+        "Trayectoria irregular",
+        "Cambios bruscos de direccion"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha coreica",
+          "Marcha del segador",
+          "Marcha antiálgica",
+          "Marcha en tijeras"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Enfermedad de Huntington",
+          "Parkinson",
+          "Hemiplejia",
+          "Ataxia"
+        ],
+        "correcta": 0
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Movimientos involuntarios",
+          "Trayectoria irregular",
+          "Inestabilidad",
+          "Espasticidad"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha coreica",
+        "cuadroPatologicoCorrecto": "Enfermedad de Huntington",
+        "manifestacionesCorrectas": [
+          "Movimientos involuntarios",
+          "Trayectoria irregular",
+          "Inestabilidad"
+        ]
+      }
+    },
+
+    {
+      "id": 10,
+      "titulo": "Marcha neuropatica diabetica",
+      "informacionPaciente": {
+        "nombre": "Antonio Vega",
+        "edad": 67,
+        "sexo": "Masculino",
+        "incidentesPrevios": [
+          "Diabetes mellitus tipo 2"
+        ]
+      },
+      "sintomas": [
+        "Perdida de sensibilidad en pies",
+        "Inseguridad al caminar",
+        "Golpeteo del pie contra el suelo"
+      ],
+      "patronMarcha": {
+        "pregunta": "¿Que patron de marcha presenta el paciente?",
+        "opciones": [
+          "Marcha neuropatica",
+          "Marcha festinante",
+          "Marcha en estrella",
+          "Marcha del segador"
+        ],
+        "correcta": 0
+      },
+      "cuadroPatologico": {
+        "pregunta": "¿Que cuadro patologico presenta el paciente?",
+        "opciones": [
+          "Neuropatia diabetica",
+          "Parkinson",
+          "Hemiplejia",
+          "Ataxia"
+        ],
+        "correcta": 0
+      },
+      "manifestacionesPropias": {
+        "pregunta": "Selecciona las manifestaciones propias del patron",
+        "opciones": [
+          "Perdida de sensibilidad",
+          "Golpeteo del pie",
+          "Inseguridad al caminar",
+          "Circunduccion de cadera"
+        ],
+        "correctas": [0, 1, 2]
+      },
+      "solucion": {
+        "patronCorrecto": "Marcha neuropatica",
+        "cuadroPatologicoCorrecto": "Neuropatia diabetica",
+        "manifestacionesCorrectas": [
+          "Perdida de sensibilidad",
+          "Golpeteo del pie",
+          "Inseguridad al caminar"
+        ]
+      }
+    }
+  ]
+}
