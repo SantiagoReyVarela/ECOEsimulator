@@ -13,23 +13,13 @@ public class InfoUI : MonoBehaviour
     public void Mostrar(CasoClinico caso)
     {
         nombre.text = caso.informacionPaciente.nombre;
-
         edad.text = caso.informacionPaciente.edad.ToString();
-
         sexo.text = caso.informacionPaciente.sexo;
 
-        incidentes.text = "";
+        incidentes.text = string.Join("\n",
+            caso.informacionPaciente.incidentesPrevios.ConvertAll(i => "- " + i));
 
-        foreach (string i in caso.informacionPaciente.incidentesPrevios)
-        {
-            incidentes.text += "- " + i + "\n";
-        }
-
-        sintomas.text = "";
-
-        foreach (string s in caso.sintomas)
-        {
-            sintomas.text += "- " + s + "\n";
-        }
+        sintomas.text = string.Join("\n",
+            caso.sintomas.ConvertAll(s => "- " + s));
     }
 }

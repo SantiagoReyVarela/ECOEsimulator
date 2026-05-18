@@ -4,12 +4,10 @@ using UnityEngine;
 public class ValidadorRespuestas : MonoBehaviour
 {
     public PreguntaUI patronUI;
-
     public PreguntaUI cuadroUI;
-
     public PreguntaUI manifestacionesUI;
 
-    CasoClinico casoActual;
+    private CasoClinico casoActual;
 
     public void Configurar(CasoClinico caso)
     {
@@ -18,41 +16,37 @@ public class ValidadorRespuestas : MonoBehaviour
 
     public void Validar()
     {
-        bool patronCorrecto =
-            patronUI.ObtenerSeleccionados()[0]
-            == casoActual.patronMarcha.correcta;
+        var patronSel = patronUI.ObtenerSeleccionados();
+        var cuadroSel = cuadroUI.ObtenerSeleccionados();
+        var maniSel = manifestacionesUI.ObtenerSeleccionados();
 
-        bool cuadroCorrecto =
-            cuadroUI.ObtenerSeleccionados()[0]
-            == casoActual.cuadroPatologico.correcta;
-
-        List<int> seleccionadas =
-            manifestacionesUI.ObtenerSeleccionados();
-
-        bool manifestacionesCorrectas =
-            CompararListas(
-                seleccionadas,
-                casoActual.manifestacionesPropias.correctas);
-
-        Debug.Log(
-            patronCorrecto &&
-            cuadroCorrecto &&
-            manifestacionesCorrectas
-            ? "CORRECTO"
-            : "INCORRECTO");
-    }
-
-    bool CompararListas(List<int> a, List<int> b)
-    {
-        if (a.Count != b.Count)
-            return false;
-
-        foreach (int n in b)
+        if (patronSel.Count == 0 || cuadroSel.Count == 0)
         {
-            if (!a.Contains(n))
-                return false;
+            Debug.Log("Faltan respuestas en preguntas simples");
+            return;
         }
 
-        return true;
+        bool patronCorrecto =
+            patronSel[0] == casoActual.patronMarcha.correcta;
+
+        bool cuadroCorrecto =
+            cuadroSel[0] == casoActual.cuadroPatologico.correcta;
+
+        bool manifestacionesCorrectas =
+            CompararListas(maniSel, casoActual.manifestacionesPropias.correctas);
+
+        Debug.Log(
+            (patronCorrecto && cuadroCorrecto && manifestacionesCorrectas)
+            ? "CORRECTO"
+            : "INCORRECTO"
+        );
+    }
+
+    private bool CompararListas(List<int> a, List<int> b)
+    {
+        HashSet<int> setA = new(a);
+        HashSet<int> setB = new(b);
+
+        return setA.SetEquals(setB);
     }
 }

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class Root
 {
     public string categoria;
-
     public List<CasoClinico> casos;
 }
 
@@ -13,7 +12,6 @@ public class Root
 public class CasoClinico
 {
     public int id;
-
     public string titulo;
 
     public InformacionPaciente informacionPaciente;
@@ -21,7 +19,6 @@ public class CasoClinico
     public List<string> sintomas;
 
     public PreguntaSimple patronMarcha;
-
     public PreguntaSimple cuadroPatologico;
 
     public PreguntaMultiple manifestacionesPropias;
@@ -33,11 +30,8 @@ public class CasoClinico
 public class InformacionPaciente
 {
     public string nombre;
-
     public int edad;
-
     public string sexo;
-
     public List<string> incidentesPrevios;
 }
 
@@ -45,9 +39,7 @@ public class InformacionPaciente
 public class PreguntaSimple
 {
     public string pregunta;
-
     public List<string> opciones;
-
     public int correcta;
 }
 
@@ -55,9 +47,7 @@ public class PreguntaSimple
 public class PreguntaMultiple
 {
     public string pregunta;
-
     public List<string> opciones;
-
     public List<int> correctas;
 }
 
@@ -65,8 +55,6 @@ public class PreguntaMultiple
 public class Solucion
 {
     public string patronCorrecto;
-
     public string cuadroPatologicoCorrecto;
-
     public List<string> manifestacionesCorrectas;
 }
