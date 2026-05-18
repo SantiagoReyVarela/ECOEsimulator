@@ -5,14 +5,11 @@ public class CasoManager : MonoBehaviour
     public InfoUI infoUI;
     public ValidadorRespuestas validador;
 
-    private CasoClinico casoActual;
-
     public void CargarCaso(CasoClinico caso)
     {
-        casoActual = caso;
+        infoUI.Mostrar(caso);
 
-        infoUI.Mostrar(casoActual);
-        validador.Configurar(casoActual);
+        validador.Configurar(caso);
 
         validador.patronUI.CrearPregunta(
             caso.patronMarcha.pregunta,

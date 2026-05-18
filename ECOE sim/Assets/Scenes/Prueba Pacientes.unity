@@ -9405,7 +9405,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1271973892}
-  - component: {fileID: 1271973891}
+  - component: {fileID: 1271973894}
+  - component: {fileID: 1271973893}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9413,19 +9414,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1271973891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271973890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae6d9df4f0561e43b6f0e8a22745b5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerName: 
 --- !u!4 &1271973892
 Transform:
   m_ObjectHideFlags: 0
@@ -9438,9 +9426,37 @@ Transform:
   m_LocalPosition: {x: 227.30139, y: 204.06952, z: -78.473305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1627425310}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1271973893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271973890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e4b25bb311fcd4c97f36d8e3bd71eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CargadorJSON
+  casoManager: {fileID: 1271973894}
+--- !u!114 &1271973894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271973890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd96a2bd7b5eae42a9cb4526923a7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasoManager
+  infoUI: {fileID: 2133925330}
+  validador: {fileID: 1627425309}
 --- !u!1 &1278644858
 GameObject:
   m_ObjectHideFlags: 0
@@ -11976,6 +11992,53 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1627425308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627425310}
+  - component: {fileID: 1627425309}
+  m_Layer: 0
+  m_Name: Validador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1627425309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627425308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd993a1f321eff4490b17323f4831fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ValidadorRespuestas
+  patronUI: {fileID: 0}
+  cuadroUI: {fileID: 0}
+  manifestacionesUI: {fileID: 0}
+--- !u!4 &1627425310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627425308}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -50.427826, y: -204.0695, z: 7490.0522}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1271973892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1631667186
 PrefabInstance:
