@@ -2576,7 +2576,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 598366056}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ExamManager, Assembly-CSharp
         m_MethodName: SubmitExam
         m_Mode: 1
@@ -2626,6 +2626,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268393074}
   m_CullTransparentMesh: 1
+--- !u!1 &273149104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273149107}
+  - component: {fileID: 273149106}
+  - component: {fileID: 273149105}
+  m_Layer: 0
+  m_Name: UI_Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &273149105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273149104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dd2f39d736d024d9fb32510e13e01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TogglePanel
+  panel: {fileID: 1312509167}
+--- !u!114 &273149106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273149104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dd2f39d736d024d9fb32510e13e01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TogglePanel
+  panel: {fileID: 2133925326}
+--- !u!4 &273149107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273149104}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 176.87215, y: -0, z: 7411.5786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &284682017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5081,65 +5140,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8339015526218430890, guid: 22455c132a231ce49809637e1c2bce17, type: 3}
   m_PrefabInstance: {fileID: 588706221}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &598366055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 598366057}
-  - component: {fileID: 598366056}
-  m_Layer: 0
-  m_Name: ExamManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &598366056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598366055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa72ff744bda141b155e3f4a6fa64a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExamManager
-  questionText: {fileID: 0}
-  questionCounterText: {fileID: 0}
-  timerText: {fileID: 0}
-  answerButtons:
-  - {fileID: 669083244}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  nextButton: {fileID: 0}
-  submitConfirmationPanel: {fileID: 105327772}
-  resultsPanel: {fileID: 0}
-  resultText: {fileID: 0}
-  numberOfQuestions: 10
-  examDuration: 3600
-  gameplaySceneName: GameScene
---- !u!4 &598366057
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598366055}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 651.1375, y: 0.00001, z: 3962.0234}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &598704774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5526,17 +5526,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669083242}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.3999999, y: 1.3999999, z: 1.3999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1450541373}
-  m_Father: {fileID: 2133925327}
+  m_Father: {fileID: 5730473063657272468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73, y: 456}
+  m_AnchoredPosition: {x: -545.13495, y: 407.6454}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669083244
@@ -5583,13 +5583,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2133925326}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 273149106}
+        m_TargetAssemblyTypeName: TogglePanel, Assembly-CSharp
+        m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9684,7 +9684,6 @@ RectTransform:
   - {fileID: 1457555204}
   - {fileID: 454897732}
   - {fileID: 175421765}
-  - {fileID: 1589599022}
   - {fileID: 39105426}
   m_Father: {fileID: 5730473063657272468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11587,15 +11586,15 @@ RectTransform:
   m_GameObject: {fileID: 1589599021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9999828, y: 1.9999828, z: 1.9999828}
+  m_LocalScale: {x: 1.3999878, y: 1.3999878, z: 1.3999878}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1146174504}
-  m_Father: {fileID: 1312509168}
+  m_Father: {fileID: 5730473063657272468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 455.99994}
+  m_AnchoredPosition: {x: 490.40002, y: 409.74542}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589599023
@@ -11642,10 +11641,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 598366056}
-        m_TargetAssemblyTypeName: ExamManager, Assembly-CSharp
-        m_MethodName: SelectAnswer
-        m_Mode: 3
+      - m_Target: {fileID: 273149105}
+        m_TargetAssemblyTypeName: TogglePanel, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13639,7 +13638,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 598366056}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ExamManager, Assembly-CSharp
         m_MethodName: CloseSubmitConfirmation
         m_Mode: 1
@@ -15000,7 +14999,6 @@ RectTransform:
   - {fileID: 803102102}
   - {fileID: 1572073801}
   - {fileID: 1923274946}
-  - {fileID: 669083243}
   m_Father: {fileID: 5730473063657272468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15285,7 +15283,7 @@ PrefabInstance:
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 1358108714836474318, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
       propertyPath: m_Color.a
-      value: 0.98039216
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1415410928058613869, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
       propertyPath: m_fontAsset
@@ -15507,7 +15505,13 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7957025923702281000, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 669083243}
+    - targetCorrespondingSourceObject: {fileID: 7957025923702281000, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2133925327}
+    - targetCorrespondingSourceObject: {fileID: 7957025923702281000, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1589599022}
     - targetCorrespondingSourceObject: {fileID: 7957025923702281000, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1312509168}
@@ -15533,4 +15537,4 @@ SceneRoots:
   - {fileID: 105869455}
   - {fileID: 1271973892}
   - {fileID: 1021983738}
-  - {fileID: 598366057}
+  - {fileID: 273149107}
