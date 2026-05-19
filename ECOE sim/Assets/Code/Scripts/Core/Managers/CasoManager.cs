@@ -4,10 +4,13 @@ public class CasoManager : MonoBehaviour
 {
     public InfoUI infoUI;
     public ValidadorRespuestas validador;
+    public ImagenPacienteUI imagenUI;
 
     public void CargarCaso(CasoClinico caso)
     {
         infoUI.Mostrar(caso);
+        
+        imagenUI.MostrarImagen(caso);
 
         validador.Configurar(caso);
 
