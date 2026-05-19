@@ -15,7 +15,8 @@ public class CargadorJSON : MonoBehaviour
     void CargarJSON()
     {
         TextAsset archivo =
-            Resources.Load<TextAsset>("casos");
+            Resources.Load<TextAsset>("pacientes");
+            // NOMBRE DEL ARCHIVO JSON
 
         if (archivo == null)
         {
