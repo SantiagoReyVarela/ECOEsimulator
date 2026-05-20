@@ -49541,7 +49541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5003400041259025521, guid: 51a75e7b4de496148b25a0a18afd151b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5092934768487890851, guid: 51a75e7b4de496148b25a0a18afd151b, type: 3}
       propertyPath: m_fontAsset
@@ -49694,7 +49694,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 417623649214246004, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415410928058613869, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
+      propertyPath: m_text
+      value: "- <b>Personajes</b>: Modelado org\xE1nico, texturizado, shaders, patolog\xEDas
+        y vestuario.\n- <b>Animaci\xF3n</b>: Rigging, movimientos y expresiones faciales.\n-
+        <b>Arte 2D</b>: Iconos, botones y paneles."
       objectReference: {fileID: 0}
     - target: {fileID: 1602507330205349202, guid: e7a44b9a057bd3541965d373dc0fb3be, type: 3}
       propertyPath: m_Camera
