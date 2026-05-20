@@ -8,6 +8,7 @@ public class ValidadorRespuestas : MonoBehaviour
     public PreguntaUI manifestacionesUI;
 
     private CasoClinico casoActual;
+    private bool ultimoResultado;
 
     public void Configurar(CasoClinico caso)
     {
@@ -16,30 +17,47 @@ public class ValidadorRespuestas : MonoBehaviour
 
     public void Validar()
     {
-        var patronSel = patronUI.ObtenerSeleccionados();
-        var cuadroSel = cuadroUI.ObtenerSeleccionados();
-        var maniSel = manifestacionesUI.ObtenerSeleccionados();
+        int puntuacion = 0;
 
-        if (patronSel.Count == 0 || cuadroSel.Count == 0)
-        {
-            Debug.Log("Faltan respuestas en preguntas simples");
-            return;
-        }
-
+        // -------------------
+        // PATRON (4 pts)
+        // -------------------
         bool patronCorrecto =
-            patronSel[0] == casoActual.patronMarcha.correcta;
+            patronUI.ObtenerSeleccionados().Count > 0 &&
+            patronUI.ObtenerSeleccionados()[0] == casoActual.patronMarcha.correcta;
 
+        if (patronCorrecto)
+            puntuacion += 4;
+
+        // -------------------
+        // CUADRO (3 pts)
+        // -------------------
         bool cuadroCorrecto =
-            cuadroSel[0] == casoActual.cuadroPatologico.correcta;
+            cuadroUI.ObtenerSeleccionados().Count > 0 &&
+            cuadroUI.ObtenerSeleccionados()[0] == casoActual.cuadroPatologico.correcta;
+
+        if (cuadroCorrecto)
+            puntuacion += 3;
+
+        // -------------------
+        // MANIFESTACIONES (3 pts)
+        // -------------------
+        List<int> seleccionadas =
+            manifestacionesUI.ObtenerSeleccionados();
 
         bool manifestacionesCorrectas =
-            CompararListas(maniSel, casoActual.manifestacionesPropias.correctas);
+            CompararListas(
+                seleccionadas,
+                casoActual.manifestacionesPropias.correctas
+            );
 
-        Debug.Log(
-            (patronCorrecto && cuadroCorrecto && manifestacionesCorrectas)
-            ? "CORRECTO"
-            : "INCORRECTO"
-        );
+        if (manifestacionesCorrectas)
+            puntuacion += 3;
+
+        // -------------------
+        // RESULTADO FINAL
+        // -------------------
+        Debug.Log("PUNTUACIÓN FINAL: " + puntuacion + " / 10");
     }
 
     private bool CompararListas(List<int> a, List<int> b)
@@ -48,5 +66,10 @@ public class ValidadorRespuestas : MonoBehaviour
         HashSet<int> setB = new(b);
 
         return setA.SetEquals(setB);
+    }
+
+    public bool EsCorrecto()
+    {
+        return ultimoResultado;
     }
 }

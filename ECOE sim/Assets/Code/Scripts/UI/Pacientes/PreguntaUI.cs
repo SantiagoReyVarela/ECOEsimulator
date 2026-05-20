@@ -21,43 +21,51 @@ public class PreguntaUI : MonoBehaviour
         string pregunta,
         List<string> opciones,
         bool multipleSeleccion)
-    {
-        textoPregunta.text = pregunta;
-
-        multiple = multipleSeleccion;
-
-        seleccionados.Clear();
-
-        foreach (Transform child in contenedorBotones)
         {
-            Destroy(child.gameObject);
-        }
+            textoPregunta.text = pregunta;
 
-        botones.Clear();
+            multiple = multipleSeleccion;
 
-        for (int i = 0; i < opciones.Count; i++)
-        {
-            int indice = i;
+            seleccionados.Clear();
 
-            GameObject obj =
-                Instantiate(prefabBoton, contenedorBotones);
-
-            TMP_Text txt =
-                obj.GetComponentInChildren<TMP_Text>();
-
-            txt.text = opciones[i];
-
-            Button boton =
-                obj.GetComponent<Button>();
-
-            boton.onClick.AddListener(() =>
+            foreach (Transform child in contenedorBotones)
             {
-                Seleccionar(indice, boton);
-            });
+                Destroy(child.gameObject);
+            }
 
-            botones.Add(boton);
+            botones.Clear();
+
+            for (int i = 0; i < opciones.Count; i++)
+            {
+                int indice = i;
+
+                GameObject obj =
+                    Instantiate(prefabBoton, contenedorBotones);
+
+                TMP_Text txt =
+                    obj.GetComponentInChildren<TMP_Text>();
+
+                txt.text = opciones[i];
+
+                Button boton =
+                    obj.GetComponent<Button>();
+
+                boton.onClick.AddListener(() =>
+                {
+                    Seleccionar(indice, boton);
+                });
+
+                botones.Add(boton);
+            }
+
+            Debug.Log("PREGUNTA: " + pregunta);
+            Debug.Log("NUM OPCIONES: " + opciones.Count);
+
+            foreach (var op in opciones)
+            {
+                Debug.Log(op);
+            }
         }
-    }
 
     void Seleccionar(int indice, Button boton)
     {
