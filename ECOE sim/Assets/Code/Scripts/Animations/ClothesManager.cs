@@ -16,6 +16,9 @@ public class ClothesManager : MonoBehaviour
     [Tooltip("SkinnedMeshRenderer del cuerpo base")]
     public SkinnedMeshRenderer smrBody;
 
+    [Header("Prueba de Equipado")]
+    public GameObject camisetaPruebaPrefab;
+
     private Dictionary<string, Transform> boneMap;
     private Dictionary<ClothType, GameObject> equipedCloth = new Dictionary<ClothType, GameObject>();
 
@@ -75,6 +78,18 @@ public class ClothesManager : MonoBehaviour
         smrCloth.bones = newBones;
         smrCloth.rootBone = smrBody.rootBone;
 
+        for (int i = 0; i < smrBody.sharedMesh.blendShapeCount; i++)
+        {
+            string blendShapeName = smrBody.sharedMesh.GetBlendShapeName(i);
+            int clothIndex = smrCloth.sharedMesh.GetBlendShapeIndex(blendShapeName);
+
+            if (clothIndex != -1) // Si la prenda tiene este Blend Shape
+            {
+                float actualWeight = smrBody.GetBlendShapeWeight(i);
+                smrCloth.SetBlendShapeWeight(clothIndex, actualWeight);
+            }
+        }
+
         Transform clothArmature = clothInstance.transform.Find("Armature");
         if (clothArmature != null)
         {
@@ -82,5 +97,14 @@ public class ClothesManager : MonoBehaviour
         }
 
         equipedCloth.Add(cat, clothInstance);
+    }
+
+    // Prueba de uso
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && camisetaPruebaPrefab != null)
+        {
+            EquipCloth(camisetaPruebaPrefab, ClothType.Torso);
+        }
     }
 }
