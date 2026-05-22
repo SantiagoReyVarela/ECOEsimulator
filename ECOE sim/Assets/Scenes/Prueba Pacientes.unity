@@ -7185,7 +7185,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 797897908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1757674974}
+        m_TargetAssemblyTypeName: MarchaController, Assembly-CSharp
+        m_MethodName: IniciarMarcha
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &797897908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13323,7 +13335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041910494484149239, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.82
+      value: -5.76
       objectReference: {fileID: 0}
     - target: {fileID: 1041910494484149239, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
       propertyPath: m_LocalRotation.w

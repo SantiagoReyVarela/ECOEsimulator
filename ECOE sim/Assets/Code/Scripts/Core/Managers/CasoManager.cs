@@ -15,7 +15,7 @@ public class CasoManager : MonoBehaviour
 
         validador.Configurar(caso);
 
-        personaje.ReproducirMarcha(caso);
+        personaje.ConfigurarCaso(caso);
 
         validador.patronUI.CrearPregunta(
             caso.patronMarcha.pregunta,

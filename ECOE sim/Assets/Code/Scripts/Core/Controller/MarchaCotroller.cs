@@ -7,44 +7,54 @@ public class MarchaController : MonoBehaviour
 
     public float velocidad = 1.5f;
 
-    public float duracion = 5f;
+    public float duracion = 6f;
 
-    private bool caminando = false;
+    private CasoClinico casoActual;
 
-    public void ReproducirMarcha(CasoClinico caso)
+    public void ConfigurarCaso(CasoClinico caso)
     {
+        casoActual = caso;
+
+        animator.SetInteger("Marcha", 0);
+    }
+
+    public void IniciarMarcha()
+    {
+        if (casoActual == null)
+            return;
+
         string titulo =
-            caso.titulo.ToLower();
+            casoActual.titulo.ToLower();
 
         int marcha = 0;
 
         if (titulo.Contains("hemiplejica"))
-            marcha = 0;
-
-        else if (titulo.Contains("festinante"))
             marcha = 1;
 
-        else if (titulo.Contains("ataxica"))
+        else if (titulo.Contains("festinante"))
             marcha = 2;
 
-        else if (titulo.Contains("estepage"))
+        else if (titulo.Contains("ataxica"))
             marcha = 3;
 
+        else if (titulo.Contains("estepage"))
+            marcha = 4;
+
         animator.SetInteger("Marcha", marcha);
+
+        StopAllCoroutines();
 
         StartCoroutine(Caminar());
     }
 
     IEnumerator Caminar()
     {
-        caminando = true;
-
         float tiempo = 0;
 
         while (tiempo < duracion)
         {
             transform.Translate(
-                Vector3.forward *
+                -Vector3.forward *
                 velocidad *
                 Time.deltaTime);
 
@@ -53,8 +63,6 @@ public class MarchaController : MonoBehaviour
             yield return null;
         }
 
-        caminando = false;
-
-        animator.SetInteger("Marcha", -1);
+        animator.SetInteger("Marcha", 0);
     }
 }

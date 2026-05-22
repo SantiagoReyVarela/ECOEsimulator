@@ -188,9 +188,6 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 3567808017093359142}
-    m_Position: {x: 380, y: 570, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 4358768374834273291}
     m_Position: {x: 120, y: 160, z: 0}
   - serializedVersion: 1
@@ -238,7 +235,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: -80, y: 160, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 3567808017093359142}
+  m_DefaultState: {fileID: 4358768374834273291}
 --- !u!1102 &-4730527315974082483
 AnimatorState:
   serializedVersion: 6
@@ -480,7 +477,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CartoonArmature|Marcha_Ataxica 0
+  m_Name: CartoonArmature|Marcha_Ataxica
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -545,32 +542,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -2189179783782044856, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &3567808017093359142
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: CartoonArmature|Marcha_Ataxica
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 6078159616725354050, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
