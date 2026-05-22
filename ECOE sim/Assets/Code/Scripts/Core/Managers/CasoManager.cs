@@ -5,6 +5,7 @@ public class CasoManager : MonoBehaviour
     public InfoUI infoUI;
     public ValidadorRespuestas validador;
     public ImagenPacienteUI imagenUI;
+    public MarchaController personaje;
 
     public void CargarCaso(CasoClinico caso)
     {
@@ -13,6 +14,8 @@ public class CasoManager : MonoBehaviour
         imagenUI.MostrarImagen(caso);
 
         validador.Configurar(caso);
+
+        personaje.ReproducirMarcha(caso);
 
         validador.patronUI.CrearPregunta(
             caso.patronMarcha.pregunta,
