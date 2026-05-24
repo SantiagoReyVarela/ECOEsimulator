@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicioManager : MonoBehaviour
 {
-    [Header("Paneles")]
+    [Header("Menus")]
+    public GameObject menuPrincipal;
     public GameObject panelOpciones;
     public GameObject panelCreditos;
 
@@ -22,12 +23,14 @@ public class MenuInicioManager : MonoBehaviour
 
     public void AbrirOpciones()
     {
+        menuPrincipal.SetActive(false);
         panelOpciones.SetActive(true);
     }
 
     public void CerrarOpciones()
     {
         panelOpciones.SetActive(false);
+        menuPrincipal.SetActive(true);
     }
 
     // =========================
@@ -36,12 +39,14 @@ public class MenuInicioManager : MonoBehaviour
 
     public void AbrirCreditos()
     {
+        menuPrincipal.SetActive(false);
         panelCreditos.SetActive(true);
     }
 
     public void CerrarCreditos()
     {
         panelCreditos.SetActive(false);
+        menuPrincipal.SetActive(true);
     }
 
     // =========================
@@ -52,7 +57,6 @@ public class MenuInicioManager : MonoBehaviour
     {
         Application.Quit();
 
-        // Solo visible en el editor
         Debug.Log("Saliendo del juego...");
     }
 }
