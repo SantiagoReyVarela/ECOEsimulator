@@ -8,17 +8,12 @@ public class MenuInicioManager : MonoBehaviour
     public GameObject panelCreditos;
 
     // =========================
-    // ESCENAS
+    // JUGAR
     // =========================
 
     public void Jugar()
     {
-        SceneManager.LoadScene("Juego");
-    }
-
-    public void Tutorial()
-    {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Partida");
     }
 
     // =========================
@@ -57,7 +52,7 @@ public class MenuInicioManager : MonoBehaviour
     {
         Application.Quit();
 
-        // Para pruebas en el editor
-        Debug.Log("Salir del juego");
+        // Solo visible en el editor
+        Debug.Log("Saliendo del juego...");
     }
 }

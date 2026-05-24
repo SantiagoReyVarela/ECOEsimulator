@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Inicio.unity
     guid: e134bf4b46840c242823e6a2d7eadb55
   - enabled: 0
@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Seleccion.unity
     guid: e936c803daf7aa14c9dfe07f1ba8a0bb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/NuevaPartida.unity
     guid: a0a076810c9d4e74d9ef1745ee5572d9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Partida.unity
     guid: 06797a594f993d644b3a2c5e7e2c541c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Environment/EnvironmentAssetsImport.unity
     guid: 85018a587c37d4542b943ea8c128a9b9
   m_configObjects: {}
