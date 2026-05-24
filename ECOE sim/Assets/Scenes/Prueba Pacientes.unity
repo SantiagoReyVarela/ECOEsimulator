@@ -3061,8 +3061,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 273149107}
-  - component: {fileID: 273149106}
-  - component: {fileID: 273149105}
+  - component: {fileID: 273149110}
+  - component: {fileID: 273149109}
   - component: {fileID: 273149108}
   m_Layer: 0
   m_Name: UI_Controller
@@ -3071,32 +3071,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &273149105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273149104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23dd2f39d736d024d9fb32510e13e01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TogglePanel
-  panel: {fileID: 0}
---- !u!114 &273149106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273149104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23dd2f39d736d024d9fb32510e13e01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TogglePanel
-  panel: {fileID: 0}
 --- !u!4 &273149107
 Transform:
   m_ObjectHideFlags: 0
@@ -3121,14 +3095,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 273149104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b149942ff788216408af90dc8bb97e7a, type: 3}
+  m_Script: {fileID: 11500000, guid: b123eec9ca8042c40a6c2f5c5600845e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TogglePanel
+  panel: {fileID: 1312509167}
+--- !u!114 &273149109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273149104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b123eec9ca8042c40a6c2f5c5600845e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TogglePanel
+  panel: {fileID: 2133925326}
+--- !u!114 &273149110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273149104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a32046973d24a428468280929c2199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ImagenPacienteUI
-  imagenPaciente: {fileID: 0}
-  hombreJoven: {fileID: 0}
-  hombreMayor: {fileID: 0}
-  mujerJoven: {fileID: 0}
-  mujerMayor: {fileID: 0}
+  imagenPaciente: {fileID: 249114018}
+  hombreJoven: {fileID: 21300000, guid: 604e731a9890d8044808cada60ffaf6e, type: 3}
+  hombreMayor: {fileID: 21300000, guid: 1b0d4e7cd81f00446ad669d860a842eb, type: 3}
+  mujerJoven: {fileID: 21300000, guid: 5a0e8789c33adba418ef8bc83d45988b, type: 3}
+  mujerMayor: {fileID: 21300000, guid: 5a0e8789c33adba418ef8bc83d45988b, type: 3}
 --- !u!1001 &284682017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4345,18 +4345,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1627425309}
-        m_TargetAssemblyTypeName: ValidadorRespuestas, Assembly-CSharp
-        m_MethodName: Validar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2055490624}
         m_TargetAssemblyTypeName: ResultadoExamen, Assembly-CSharp
         m_MethodName: MostrarResultado
@@ -6369,7 +6357,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273149106}
+      - m_Target: {fileID: 273149109}
         m_TargetAssemblyTypeName: TogglePanel, Assembly-CSharp
         m_MethodName: Toggle
         m_Mode: 1
@@ -7186,7 +7174,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1757674974}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MarchaController, Assembly-CSharp
         m_MethodName: IniciarMarcha
         m_Mode: 1
@@ -10733,10 +10721,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271973890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e4b25bb311fcd4c97f36d8e3bd71eb, type: 3}
+  m_Script: {fileID: 11500000, guid: b76d58c173017ab4e982949d5e3767c7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CargadorJSON
-  casoManager: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::CasoManager
+  infoUI: {fileID: 2133925330}
+  patronUI: {fileID: 1638228084}
+  cuadroUI: {fileID: 1624907586}
+  manifestacionesUI: {fileID: 1642430142}
+  validador: {fileID: 1627425311}
+  imagenUI: {fileID: 273149110}
 --- !u!114 &1271973894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10746,13 +10739,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271973890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dd96a2bd7b5eae42a9cb4526923a7fa, type: 3}
+  m_Script: {fileID: 11500000, guid: d59c68da5623e5742b5fa07f1899d451, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CasoManager
-  infoUI: {fileID: 0}
-  validador: {fileID: 0}
-  imagenUI: {fileID: 0}
-  personaje: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::CargadorJSON
+  archivoJSON: {fileID: 4900000, guid: be572c72f95c7674085aadf50caa7633, type: 3}
+  casoManager: {fileID: 1271973893}
 --- !u!1 &1278644858
 GameObject:
   m_ObjectHideFlags: 0
@@ -10896,9 +10887,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1286655765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550ac73e9bcadcb46906b5f858297e0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 894bcf7253e9f134faa33d1ad405f33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerExam
+  textoTimer: {fileID: 344818696}
+  tiempoInicial: 300
+  resultado: {fileID: 2055490624}
 --- !u!1 &1289386680
 GameObject:
   m_ObjectHideFlags: 0
@@ -13123,7 +13117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273149105}
+      - m_Target: {fileID: 273149108}
         m_TargetAssemblyTypeName: TogglePanel, Assembly-CSharp
         m_MethodName: Toggle
         m_Mode: 1
@@ -13566,12 +13560,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1624907584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aef59d51349ccc24190c2a6bfb22acc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 30bac928390bbec4d80890b8116e3df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PreguntaUI
-  textoPregunta: {fileID: 0}
-  contenedorBotones: {fileID: 0}
-  prefabBoton: {fileID: 0}
+  textoPregunta: {fileID: 454897733}
+  contenedorBotones: {fileID: 1859566099}
+  prefabBoton: {fileID: 4268719373876119556, guid: 820c0ff25f7fe9945b6bac64b872cb5f, type: 3}
 --- !u!1 &1627425308
 GameObject:
   m_ObjectHideFlags: 0
@@ -13581,7 +13575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1627425310}
-  - component: {fileID: 1627425309}
+  - component: {fileID: 1627425311}
   m_Layer: 0
   m_Name: Validador
   m_TagString: Untagged
@@ -13589,21 +13583,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1627425309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627425308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd993a1f321eff4490b17323f4831fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ValidadorRespuestas
-  patronUI: {fileID: 0}
-  cuadroUI: {fileID: 0}
-  manifestacionesUI: {fileID: 0}
 --- !u!4 &1627425310
 Transform:
   m_ObjectHideFlags: 0
@@ -13619,6 +13598,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1271973892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1627425311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627425308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c4a9dab2e07be46a78749e8dfdd879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ValidadorRespuestas
+  patronUI: {fileID: 1638228084}
+  cuadroUI: {fileID: 1624907586}
+  manifestacionesUI: {fileID: 1642430142}
 --- !u!1001 &1631667186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13736,12 +13730,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1638228082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aef59d51349ccc24190c2a6bfb22acc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 30bac928390bbec4d80890b8116e3df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PreguntaUI
-  textoPregunta: {fileID: 0}
-  contenedorBotones: {fileID: 0}
-  prefabBoton: {fileID: 0}
+  textoPregunta: {fileID: 1457555205}
+  contenedorBotones: {fileID: 319186381}
+  prefabBoton: {fileID: 4268719373876119556, guid: 820c0ff25f7fe9945b6bac64b872cb5f, type: 3}
 --- !u!1 &1642430140
 GameObject:
   m_ObjectHideFlags: 0
@@ -13789,12 +13783,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1642430140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aef59d51349ccc24190c2a6bfb22acc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 30bac928390bbec4d80890b8116e3df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PreguntaUI
-  textoPregunta: {fileID: 0}
-  contenedorBotones: {fileID: 0}
-  prefabBoton: {fileID: 0}
+  textoPregunta: {fileID: 175421766}
+  contenedorBotones: {fileID: 1100485962}
+  prefabBoton: {fileID: 4268719373876119556, guid: 820c0ff25f7fe9945b6bac64b872cb5f, type: 3}
 --- !u!1001 &1654365896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16581,12 +16575,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2055490622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20ecb3c77e11b37489cc49126c72bb86, type: 3}
+  m_Script: {fileID: 11500000, guid: 14cd93b7cda86ac45bec8c9083d1dd1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResultadoExamen
-  panelResultado: {fileID: 0}
-  textoResultado: {fileID: 0}
-  validador: {fileID: 0}
+  panelResultado: {fileID: 206923320}
+  textoResultado: {fileID: 2053124835}
+  validador: {fileID: 1627425311}
 --- !u!1001 &2056762451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17239,14 +17233,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2133925326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b64c6e0cea962e4c9de2073514536da, type: 3}
+  m_Script: {fileID: 11500000, guid: 31a5babf0c3744e4db66c25d4c6bfc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InfoUI
-  nombre: {fileID: 0}
-  edad: {fileID: 0}
-  sexo: {fileID: 0}
-  incidentes: {fileID: 0}
-  sintomas: {fileID: 0}
+  nombre: {fileID: 424977483}
+  edad: {fileID: 2102665204}
+  sexo: {fileID: 803102103}
+  incidentes: {fileID: 1572073802}
+  sintomas: {fileID: 1923274947}
 --- !u!1001 &2135015194
 PrefabInstance:
   m_ObjectHideFlags: 0

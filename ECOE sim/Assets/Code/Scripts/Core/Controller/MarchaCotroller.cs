@@ -15,6 +15,7 @@ public class MarchaController : MonoBehaviour
     {
         casoActual = caso;
 
+        // Idle al cargar escena
         animator.SetInteger("Marcha", 0);
     }
 
@@ -56,13 +57,15 @@ public class MarchaController : MonoBehaviour
             transform.Translate(
                 -Vector3.forward *
                 velocidad *
-                Time.deltaTime);
+                Time.deltaTime
+            );
 
             tiempo += Time.deltaTime;
 
             yield return null;
         }
 
+        // volver a idle
         animator.SetInteger("Marcha", 0);
     }
 }
