@@ -5,67 +5,82 @@ public class MarchaController : MonoBehaviour
 {
     public Animator animator;
 
-    public float velocidad = 1.5f;
+    public float velocidad = 1.0f;
 
-    public float duracion = 6f;
+    private int marchaActual;
 
-    private CasoClinico casoActual;
+    private Vector3 posicionInicial;
+    private Quaternion rotacionInicial;
+
+    private bool ejecutando = false;
+
+    public void Start()
+    {
+        posicionInicial = transform.position;
+        rotacionInicial = transform.rotation;
+    }
 
     public void ConfigurarCaso(CasoClinico caso)
     {
-        casoActual = caso;
+        marchaActual = caso.patronMarcha.correcta + 1;
 
-        // Idle al cargar escena
-        animator.SetInteger("Marcha", 0);
+        animator.SetInteger("MarchaID", 0);
     }
 
     public void IniciarMarcha()
     {
-        if (casoActual == null)
+        // 🔒 BLOQUEO: evita re-ejecución
+        if (ejecutando)
             return;
 
-        string titulo =
-            casoActual.titulo.ToLower();
-
-        int marcha = 0;
-
-        if (titulo.Contains("hemiplejica"))
-            marcha = 1;
-
-        else if (titulo.Contains("festinante"))
-            marcha = 2;
-
-        else if (titulo.Contains("ataxica"))
-            marcha = 3;
-
-        else if (titulo.Contains("estepage"))
-            marcha = 4;
-
-        animator.SetInteger("Marcha", marcha);
-
-        StopAllCoroutines();
-
-        StartCoroutine(Caminar());
+        StartCoroutine(CicloMarcha());
     }
 
-    IEnumerator Caminar()
+    IEnumerator CicloMarcha()
     {
-        float tiempo = 0;
+        ejecutando = true; //espera activa
 
-        while (tiempo < duracion)
+        // 1. ACTIVAR ANIMACION
+        animator.SetInteger("MarchaID", marchaActual);
+
+        // =========================
+        // 2. IR HACIA DELANTE (3s)
+        // =========================
+        yield return StartCoroutine(Mover(-Vector3.forward, 3f));
+
+        // 3. GIRAR 180°
+        transform.rotation = rotacionInicial * Quaternion.Euler(0, 180f, 0);
+
+        yield return new WaitForSeconds(0.2f);
+
+        // =========================
+        // 4. VOLVER (3s)
+        // =========================
+        yield return StartCoroutine(Mover(-Vector3.forward, 3f));
+
+        // 5. ESPERAR
+        yield return new WaitForSeconds(0.1f);
+
+        // 6. VOLVER A IDLE
+        animator.SetInteger("MarchaID", 0);
+
+        transform.rotation = rotacionInicial;
+
+        ejecutando = false;
+    }
+
+    IEnumerator Mover(Vector3 direccion, float duracion)
+    {
+        float t = 0;
+
+        while (t < duracion)
         {
             transform.Translate(
-                -Vector3.forward *
-                velocidad *
-                Time.deltaTime
+                direccion * velocidad * Time.deltaTime
             );
 
-            tiempo += Time.deltaTime;
-
+            t += Time.deltaTime;
             yield return null;
         }
-
-        // volver a idle
-        animator.SetInteger("Marcha", 0);
     }
 }

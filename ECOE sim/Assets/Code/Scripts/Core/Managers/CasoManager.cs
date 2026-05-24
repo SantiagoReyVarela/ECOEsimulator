@@ -14,11 +14,19 @@ public class CasoManager : MonoBehaviour
 
     public ImagenPacienteUI imagenUI;
 
+    public MarchaController personaje;
+
     public void CargarCaso(CasoClinico caso)
     {
         infoUI.Mostrar(caso);
-
         imagenUI.MostrarImagen(caso);
+
+        Debug.Log("infoUI: " + infoUI);
+        Debug.Log("imagenUI: " + imagenUI);
+        Debug.Log("validador: " + validador);
+        Debug.Log("personaje: " + personaje);
+
+        
 
         patronUI.CrearPregunta(
             caso.patronMarcha.pregunta,
@@ -39,5 +47,8 @@ public class CasoManager : MonoBehaviour
         );
 
         validador.Configurar(caso);
+
+        // GUARDAR CASO EN PERSONAJE
+        personaje.ConfigurarCaso(caso);
     }
 }

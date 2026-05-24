@@ -16,6 +16,8 @@ public class CasoClinico
 
     public InformacionPaciente informacionPaciente;
 
+    public int idMarcha;
+
     public List<string> sintomas;
 
     public PreguntaSimple patronMarcha;
