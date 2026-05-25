@@ -26,15 +26,7 @@ public class ObjInteractive : MonoBehaviour
     {
         if (!canInteract) return;
 
-        // Si hay un target (ej: Door), usamos su lógica
-        if (interactable != null)
-        {
-            interactable.Interact();
-        }
-        else
-        {
-            Debug.Log($"Interacción con {gameObject.name}");
-        }
+        Debug.Log("Interacción directa con " + gameObject.name);
     }
 
     public virtual void OnPlayerEnter()
