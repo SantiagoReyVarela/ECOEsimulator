@@ -15,18 +15,16 @@ public class PreguntaUI : MonoBehaviour
 
     private List<int> seleccionados = new();
 
-    private bool multiple;
+    private bool multipleSeleccion;
 
     public void CrearPregunta(
         string pregunta,
         List<string> opciones,
-        bool multipleSeleccion)
+        bool multiple)
     {
         textoPregunta.text = pregunta;
 
-        multiple = multipleSeleccion;
-
-        seleccionados.Clear();
+        multipleSeleccion = multiple;
 
         foreach (Transform child in contenedorBotones)
         {
@@ -34,6 +32,8 @@ public class PreguntaUI : MonoBehaviour
         }
 
         botones.Clear();
+
+        seleccionados.Clear();
 
         for (int i = 0; i < opciones.Count; i++)
         {
@@ -50,46 +50,45 @@ public class PreguntaUI : MonoBehaviour
             Button boton =
                 obj.GetComponent<Button>();
 
+            Image imagen =
+                obj.GetComponent<Image>();
+
+            Color colorOriginal = imagen.color;
+
             boton.onClick.AddListener(() =>
             {
-                Seleccionar(indice, boton);
+                if (multipleSeleccion)
+                {
+                    if (seleccionados.Contains(indice))
+                    {
+                        seleccionados.Remove(indice);
+
+                        imagen.color = colorOriginal;
+                    }
+                    else
+                    {
+                        seleccionados.Add(indice);
+
+                        imagen.color = Color.green;
+                    }
+                }
+                else
+                {
+                    seleccionados.Clear();
+
+                    foreach (Button b in botones)
+                    {
+                        b.GetComponent<Image>().color =
+                            colorOriginal;
+                    }
+
+                    seleccionados.Add(indice);
+
+                    imagen.color = Color.green;
+                }
             });
 
             botones.Add(boton);
-        }
-    }
-
-    void Seleccionar(int indice, Button boton)
-    {
-        Image imagen = boton.GetComponent<Image>();
-
-        if (multiple)
-        {
-            if (seleccionados.Contains(indice))
-            {
-                seleccionados.Remove(indice);
-
-                imagen.color = Color.white;
-            }
-            else
-            {
-                seleccionados.Add(indice);
-
-                imagen.color = Color.green;
-            }
-        }
-        else
-        {
-            seleccionados.Clear();
-
-            foreach (Button b in botones)
-            {
-                b.GetComponent<Image>().color = Color.white;
-            }
-
-            seleccionados.Add(indice);
-
-            imagen.color = Color.green;
         }
     }
 
