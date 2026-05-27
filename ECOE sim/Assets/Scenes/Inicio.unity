@@ -430,6 +430,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1293845846}
     m_Modifications:
+    - target: {fileID: 2964120635382154521, guid: f73569f78e63d764db73924f62a531f9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823039619119508863, guid: f73569f78e63d764db73924f62a531f9, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823039619119508863, guid: f73569f78e63d764db73924f62a531f9, type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7635030954929054709, guid: f73569f78e63d764db73924f62a531f9, type: 3}
       propertyPath: m_Name
       value: ClinicWallInterior (36)
