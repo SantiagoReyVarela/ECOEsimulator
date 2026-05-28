@@ -10,6 +10,12 @@ public class ValidadorRespuestas : MonoBehaviour
     private CasoClinico casoActual;
     private bool ultimoResultado;
 
+    // Propiedades públicas para que la UI lea los desgloses
+    public int PuntuacionFinal { get; private set; }
+    public bool PatronCorrecto { get; private set; }
+    public bool CuadroCorrecto { get; private set; }
+    public bool ManifestacionesCorrectas { get; private set; }
+
     public void Configurar(CasoClinico caso)
     {
         casoActual = caso;
@@ -22,49 +28,46 @@ public class ValidadorRespuestas : MonoBehaviour
         // -------------------
         // PATRON (4 pts)
         // -------------------
-        bool patronCorrecto =
-            patronUI.ObtenerSeleccionados().Count > 0 &&
-            patronUI.ObtenerSeleccionados()[0] == casoActual.patronMarcha.correcta;
+        PatronCorrecto = patronUI.ObtenerSeleccionados().Count > 0 &&
+                         patronUI.ObtenerSeleccionados()[0] == casoActual.patronMarcha.correcta;
 
-        if (patronCorrecto)
+        if (PatronCorrecto)
             puntuacion += 4;
 
         // -------------------
         // CUADRO (3 pts)
         // -------------------
-        bool cuadroCorrecto =
-            cuadroUI.ObtenerSeleccionados().Count > 0 &&
-            cuadroUI.ObtenerSeleccionados()[0] == casoActual.cuadroPatologico.correcta;
+        CuadroCorrecto = cuadroUI.ObtenerSeleccionados().Count > 0 &&
+                         cuadroUI.ObtenerSeleccionados()[0] == casoActual.cuadroPatologico.correcta;
 
-        if (cuadroCorrecto)
+        if (CuadroCorrecto)
             puntuacion += 3;
 
         // -------------------
         // MANIFESTACIONES (3 pts)
         // -------------------
-        List<int> seleccionadas =
-            manifestacionesUI.ObtenerSeleccionados();
+        List<int> seleccionadas = manifestacionesUI.ObtenerSeleccionados();
 
-        bool manifestacionesCorrectas =
-            CompararListas(
-                seleccionadas,
-                casoActual.manifestacionesPropias.correctas
-            );
+        ManifestacionesCorrectas = CompararListas(seleccionadas, casoActual.manifestacionesPropias.correctas);
 
-        if (manifestacionesCorrectas)
+        if (ManifestacionesCorrectas)
             puntuacion += 3;
 
         // -------------------
         // RESULTADO FINAL
         // -------------------
-        Debug.Log("PUNTUACIÓN FINAL: " + puntuacion + " / 10");
+        PuntuacionFinal = puntuacion;
+
+        // CORRECCIÓN: Guardamos si el alumno aprueba (nota >= 5)
+        ultimoResultado = PuntuacionFinal >= 5;
+
+        Debug.Log("PUNTUACIÓN FINAL GUARDADA: " + PuntuacionFinal + " / 10");
     }
 
     private bool CompararListas(List<int> a, List<int> b)
     {
         HashSet<int> setA = new(a);
         HashSet<int> setB = new(b);
-
         return setA.SetEquals(setB);
     }
 
