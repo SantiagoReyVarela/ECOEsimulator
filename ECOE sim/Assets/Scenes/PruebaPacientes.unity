@@ -2218,7 +2218,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &273149107
 Transform:
@@ -14267,7 +14267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 273149109}
         m_TargetAssemblyTypeName: TogglePanel, Assembly-CSharp
         m_MethodName: Toggle
         m_Mode: 1
@@ -14358,7 +14358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -71.79761, y: 2.2058716}
+  m_AnchoredPosition: {x: -71.79767, y: 2.2058716}
   m_SizeDelta: {x: 833.2515, y: 652.7686}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2761359882682651302
@@ -17302,7 +17302,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 273149108}
         m_TargetAssemblyTypeName: TogglePanel, Assembly-CSharp
         m_MethodName: Toggle
         m_Mode: 1
@@ -17864,9 +17864,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c48a92bb7ab700641af5873affcefcf2, type: 3}
+      - m_Target: {fileID: 955840762}
         m_TargetAssemblyTypeName: MarchaController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
