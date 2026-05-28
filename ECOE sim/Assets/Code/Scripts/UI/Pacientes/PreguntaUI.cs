@@ -17,6 +17,9 @@ public class PreguntaUI : MonoBehaviour
 
     private bool multipleSeleccion;
 
+    [Header("Colores Examen")]
+    public Color colorSeleccionado = new Color(1.0f, 0.7f, 0.4f);
+
     public void CrearPregunta(
         string pregunta,
         List<string> opciones,
@@ -69,7 +72,7 @@ public class PreguntaUI : MonoBehaviour
                     {
                         seleccionados.Add(indice);
 
-                        imagen.color = Color.green;
+                        imagen.color = colorSeleccionado;
                     }
                 }
                 else
@@ -84,7 +87,7 @@ public class PreguntaUI : MonoBehaviour
 
                     seleccionados.Add(indice);
 
-                    imagen.color = Color.green;
+                    imagen.color = colorSeleccionado;
                 }
             });
 

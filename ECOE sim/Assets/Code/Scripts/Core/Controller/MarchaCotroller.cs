@@ -1,18 +1,18 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
 public class MarchaController : MonoBehaviour
 {
     public Animator animator;
-
     public float velocidad = 1.0f;
-
     private int marchaActual;
 
     private Vector3 posicionInicial;
     private Quaternion rotacionInicial;
-
     private bool ejecutando = false;
+    public bool IsEjecutando => ejecutando;
 
     public void Start()
     {
