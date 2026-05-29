@@ -16,6 +16,10 @@ public class BotonMarchaUI : MonoBehaviour
     public Sprite iconoPlay;
     public Sprite iconoPausa;
 
+    [Header("Colores Evaluación")]
+    public Color colorIdle = new Color(0.35f, 1.0f, 0.35f);
+    public Color colorEvaluacion = new Color(0.35f, 1.0f, 0.35f);
+
     [Header("Configuración de Textos Médicos")]
     [SerializeField] private string textoIdle = "Iniciar Evaluación";
     [SerializeField] private string textoEvaluando = "Evaluando...";
@@ -62,14 +66,14 @@ public class BotonMarchaUI : MonoBehaviour
             textoBoton.text = textoEvaluando;
             if (iconoPausa != null) imageIcono.sprite = iconoPausa;
 
-            textoBoton.color = new Color(0.35f, 1.0f, 0.35f);
+            textoBoton.color = colorEvaluacion;
         }
         else
         {
             textoBoton.text = textoIdle;
             if (iconoPlay != null) imageIcono.sprite = iconoPlay;
 
-            textoBoton.color = Color.black;
+            textoBoton.color = colorIdle;
         }
-    }   
+    }
 }

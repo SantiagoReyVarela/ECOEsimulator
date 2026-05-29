@@ -17,11 +17,6 @@ public class ResultadoExamen : MonoBehaviour
     public Color colorAcierto = Color.green;
     public Color colorError = Color.red;
 
-    // Símbolos seguros para que Unity no de error al guardar el archivo
-    private string iconoCheck = "\u2714"; // Esto dbuja un tick (?)
-    private string iconoCruz = "\u2718";  // Esto dibuja una cruz (?)
-    private string puntoLista = "\u2022"; // Esto dibuja un puntito de lista (•)
-
     public void MostrarResultado()
     {
         // Activamos el folio blanco de resultados
@@ -53,21 +48,21 @@ public class ResultadoExamen : MonoBehaviour
 
         // Apartado Marcha
         if (validador.PatronCorrecto)
-            folio += $"  {puntoLista} Análisis de Patrón de Marcha: <color={hexAcierto}><b>\n{iconoCheck} APTO</b></color> (+4.0 pts)\n";
+            folio += $" Análisis de Patrón de Marcha: <color={hexAcierto}><b>\n APTO</b></color> (+4.0 pts)\n";
         else
-            folio += $"  {puntoLista} Análisis de Patrón de Marcha: <color={hexError}><b>\n{iconoCruz} NO APTO</b></color> (+0.0 pts)\n";
+            folio += $"    Análisis de Patrón de Marcha: <color={hexError}><b>\n  NO APTO</b></color> (+0.0 pts)\n";
 
         // Apartado Cuadro Patológico
         if (validador.CuadroCorrecto)
-            folio += $"  {puntoLista} Diagnóstico del Cuadro Patológico: <color={hexAcierto}><b>\n{iconoCheck} APTO</b></color> (+3.0 pts)\n";
+            folio += $"    Diagnóstico del Cuadro Patológico: <color={hexAcierto}><b>\n APTO</b></color> (+3.0 pts)\n";
         else
-            folio += $"  {puntoLista} Diagnóstico del Cuadro Patológico: <color={hexError}><b>\n{iconoCruz} NO APTO</b></color> (+0.0 pts)\n";
+            folio += $"    Diagnóstico del Cuadro Patológico: <color={hexError}><b>\n  NO APTO</b></color> (+0.0 pts)\n";
 
         // Apartado Síntomas
         if (validador.ManifestacionesCorrectas)
-            folio += $"  {puntoLista} Identificación de Síntomas: <color={hexAcierto}><b>\n{iconoCheck} APTO</b></color> (+3.0 pts)\n";
+            folio += $"    Identificación de Síntomas: <color={hexAcierto}><b>\n APTO</b></color> (+3.0 pts)\n";
         else
-            folio += $"  {puntoLista} Identificación de Síntomas: <color={hexError}><b>\n{iconoCruz} NO APTO</b></color> (+0.0 pts)\n";
+            folio += $"    Identificación de Síntomas: <color={hexError}><b>\n  NO APTO</b></color> (+0.0 pts)\n";
 
         folio += "</color>"; // Cerramos el color principal
 
@@ -76,13 +71,13 @@ public class ResultadoExamen : MonoBehaviour
         // 3. NOTA FINAL Y DIÁLOGO DE VEREDICTO
         if (aprobado)
         {
-            folio += $"<align=center><size=140%><color={hexAprobado}><b>CALIFICACIÓN: APTO {iconoCheck}</b></color></size></align>\n";
+            folio += $"<align=center><size=140%><color={hexAprobado}><b>CALIFICACIÓN: APTO </b></color></size></align>\n";
             folio += $"<align=center><size=160%><color={hexAprobado}><b>NOTA FINAL: {nota}.0 / 10</b></color></size></align>\n\n";
             folio += $"<align=center><size=85%><color={hexPrincipal}>El alumno demuestra las competencias clínicas mínimas requeridas.</color></size></align>";
         }
         else
         {
-            folio += $"<align=center><size=140%><color={hexSuspenso}><b>CALIFICACIÓN: NO APTO {iconoCruz}</b></color></size></align>\n";
+            folio += $"<align=center><size=140%><color={hexSuspenso}><b>CALIFICACIÓN: NO APTO  </b></color></size></align>\n";
             folio += $"<align=center><size=160%><color={hexSuspenso}><b>NOTA FINAL: {nota}.0 / 10</b></color></size></align>\n\n";
             folio += $"<align=center><size=85%><color={hexPrincipal}>Se recomienda revisar el manual técnico de la consulta médica.</color></size></align>";
         }
