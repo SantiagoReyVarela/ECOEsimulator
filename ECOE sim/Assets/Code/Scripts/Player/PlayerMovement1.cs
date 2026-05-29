@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -13,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
+
+    [Header("Player Animator")]
+    public Animator animator;
 
     private float xRotation = 0f;
 
@@ -51,6 +55,9 @@ public class PlayerMovement : MonoBehaviour
         float speed = isRunning ? runSpeed : walkSpeed;
 
         controller.Move(move * speed * Time.deltaTime);
+
+        bool isMoving = move.magnitude > 0.1f;
+        animator.SetBool("IsWalking", isMoving);
 
         // --------- GRAVEDAD ---------
         if (controller.isGrounded && velocity.y < 0)
