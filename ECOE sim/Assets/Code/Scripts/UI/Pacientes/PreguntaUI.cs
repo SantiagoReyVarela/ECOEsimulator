@@ -81,8 +81,7 @@ public class PreguntaUI : MonoBehaviour
 
                     foreach (Button b in botones)
                     {
-                        b.GetComponent<Image>().color =
-                            colorOriginal;
+                        b.GetComponent<Image>().color = colorOriginal;
                     }
 
                     seleccionados.Add(indice);
