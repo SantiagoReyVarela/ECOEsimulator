@@ -1,83 +1,93 @@
-using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResultadoExamen : MonoBehaviour
 {
+    [Header("Paneles y Referencias")]
     public GameObject panelResultado;
     public TMP_Text textoResultado;
     public ValidadorRespuestas validador;
 
-    [Header("Configuración de Colores (Paleta Sanitaria)")]
-    [SerializeField] private string colorAprobado = "#1E4620";   // Verde institucional oscuro
-    [SerializeField] private string colorSuspenso = "#C43B3B";   // Rojo Coral de alerta
-    [SerializeField] private string colorAcierto = "#2E7D32";    // Verde para desgloses
-    [SerializeField] private string colorError = "#C62828";      // Rojo para desgloses
-    [SerializeField] private string colorFondoBanner = "#F4F4F5"; // Gris claro para destacar textos
+    [Header("Colores para el Papel Blanco (Configura en el Inspector)")]
+    public Color colorTextoPrincipal = Color.black;
+    public Color colorLineasSeparadoras = Color.gray;
+    public Color colorAprobado = Color.blue;
+    public Color colorSuspenso = Color.red;
+    public Color colorAcierto = Color.green;
+    public Color colorError = Color.red;
+
+    // Símbolos seguros para que Unity no de error al guardar el archivo
+    private string iconoCheck = "\u2714"; // Esto dbuja un tick (?)
+    private string iconoCruz = "\u2718";  // Esto dibuja una cruz (?)
+    private string puntoLista = "\u2022"; // Esto dibuja un puntito de lista (•)
 
     public void MostrarResultado()
     {
+        // Activamos el folio blanco de resultados
         panelResultado.SetActive(true);
 
-        // Forzamos la validación de los datos en el validador
+        // Le decimos al otro script que calcule la nota
         validador.Validar();
 
         bool aprobado = validador.EsCorrecto();
         int nota = validador.PuntuacionFinal;
 
-        // Construimos el documento usando secuencias de escape Unicode seguras
-        StringBuilder documento = new StringBuilder();
+        // Convertimos los colores del inspector a texto para que TextMeshPro los entienda
+        string hexPrincipal = "#" + ColorUtility.ToHtmlStringRGB(colorTextoPrincipal);
+        string hexLineas = "#" + ColorUtility.ToHtmlStringRGB(colorLineasSeparadoras);
+        string hexAprobado = "#" + ColorUtility.ToHtmlStringRGB(colorAprobado);
+        string hexSuspenso = "#" + ColorUtility.ToHtmlStringRGB(colorSuspenso);
+        string hexAcierto = "#" + ColorUtility.ToHtmlStringRGB(colorAcierto);
+        string hexError = "#" + ColorUtility.ToHtmlStringRGB(colorError);
 
-        // 1. ENCABEZADO INSTITUCIONAL DE LA REY JUAN CARLOS
-        documento.AppendLine("<align=center><size=110%><b>UNIVERSIDAD REY JUAN CARLOS</b></size></align>");
-        documento.AppendLine("<align=center><size=80%><color=#666666>FACULTAD DE CIENCIAS DE LA SALUD \u2014 EVALUACIÓN ECOE</color></size></align>");
-        documento.AppendLine("<voffset=0.5em> </voffset>");
-        documento.AppendLine("<color=#cccccc>__________________________________________________</color>");
-        documento.AppendLine("<voffset=0.5em> </voffset>");
+        // Empezamos a rellenar el folio de papel vacío
+        string folio = "";
 
-        // 2. DETALLES DE LA ESTACIÓN CLÍNICA
-        documento.AppendLine("<b>INFORME TÉCNICO DETALLADO:</b>");
-        documento.AppendLine("<size=90%><color=#333333>");
+        // 1. TÍTULO Y CABECERA
+        folio += $"<align=center><size=80%><color={hexLineas}>EVALUACIÓN ECOE</color></size></align>\n";
+        folio += $"<color={hexLineas}>_____________________________</color>\n\n";
 
-        // Desglose 1: Patrón de Marcha (\u2714 es el check verde, \u2718 es el aspa roja)
-        string estadoPatron = validador.PatronCorrecto
-            ? $"<color={colorAcierto}><b>\u2714 APTO</b></color> <color=#666666>(+4.0 pts)</color>"
-            : $"<color={colorError}><b>\u2718 NO APTO</b></color> <color=#666666>(+0.0 pts)</color>";
-        documento.AppendLine($"  \u2022 Análisis de Patrón de Marcha: {estadoPatron}");
+        // 2. DESGLOSE DE PUNTOS (Ponemos el texto principal oscuro para que se vea bien en blanco)
+        folio += $"<color={hexPrincipal}><b>INFORME DETALLADO:</b>\n\n";
 
-        // Desglose 2: Cuadro Patológico
-        string estadoCuadro = validador.CuadroCorrecto
-            ? $"<color={colorAcierto}><b>\u2714 APTO</b></color> <color=#666666>(+3.0 pts)</color>"
-            : $"<color={colorError}><b>\u2718 NO APTO</b></color> <color=#666666>(+0.0 pts)</color>";
-        documento.AppendLine($"  \u2022 Diagnóstico del Cuadro Patológico: {estadoCuadro}");
+        // Apartado Marcha
+        if (validador.PatronCorrecto)
+            folio += $"  {puntoLista} Análisis de Patrón de Marcha: <color={hexAcierto}><b>\n{iconoCheck} APTO</b></color> (+4.0 pts)\n";
+        else
+            folio += $"  {puntoLista} Análisis de Patrón de Marcha: <color={hexError}><b>\n{iconoCruz} NO APTO</b></color> (+0.0 pts)\n";
 
-        // Desglose 3: Manifestaciones
-        string estadoManifestaciones = validador.ManifestacionesCorrectas
-            ? $"<color={colorAcierto}><b>\u2714 APTO</b></color> <color=#666666>(+3.0 pts)</color>"
-            : $"<color={colorError}><b>\u2718 NO APTO</b></color> <color=#666666>(+0.0 pts)</color>";
-        documento.AppendLine($"  \u2022 Identificación de Síntomas: {estadoManifestaciones}");
-        documento.AppendLine("</color></size>");
+        // Apartado Cuadro Patológico
+        if (validador.CuadroCorrecto)
+            folio += $"  {puntoLista} Diagnóstico del Cuadro Patológico: <color={hexAcierto}><b>\n{iconoCheck} APTO</b></color> (+3.0 pts)\n";
+        else
+            folio += $"  {puntoLista} Diagnóstico del Cuadro Patológico: <color={hexError}><b>\n{iconoCruz} NO APTO</b></color> (+0.0 pts)\n";
 
-        documento.AppendLine("<color=#cccccc>__________________________________________________</color>");
-        documento.AppendLine("<voffset=1em> </voffset>");
+        // Apartado Síntomas
+        if (validador.ManifestacionesCorrectas)
+            folio += $"  {puntoLista} Identificación de Síntomas: <color={hexAcierto}><b>\n{iconoCheck} APTO</b></color> (+3.0 pts)\n";
+        else
+            folio += $"  {puntoLista} Identificación de Síntomas: <color={hexError}><b>\n{iconoCruz} NO APTO</b></color> (+0.0 pts)\n";
 
-        // 3. CALIFICACIÓN GLOBAL Y VEREDICTO (Formato de sello/tarjeta)
+        folio += "</color>"; // Cerramos el color principal
+
+        folio += $"\n<color={hexLineas}>_____________________________</color>\n\n";
+
+        // 3. NOTA FINAL Y DIÁLOGO DE VEREDICTO
         if (aprobado)
         {
-            documento.AppendLine($"<align=center><size=130%><color={colorAprobado}><b>CALIFICACIÓN: APTO (\u2714)</b></color></size></align>");
-            documento.AppendLine($"<align=center><size=150%><color={colorAprobado}><b>NOTA FINAL: {nota}.0 / 10</b></color></size></align>");
-            documento.AppendLine("<voffset=0.5em> </voffset>");
-            documento.AppendLine("<align=center><size=80%><color=#555555>El candidato demuestra las competencias clínicas requeridas para superar esta estación.</color></size></align>");
+            folio += $"<align=center><size=140%><color={hexAprobado}><b>CALIFICACIÓN: APTO {iconoCheck}</b></color></size></align>\n";
+            folio += $"<align=center><size=160%><color={hexAprobado}><b>NOTA FINAL: {nota}.0 / 10</b></color></size></align>\n\n";
+            folio += $"<align=center><size=85%><color={hexPrincipal}>El alumno demuestra las competencias clínicas mínimas requeridas.</color></size></align>";
         }
         else
         {
-            documento.AppendLine($"<align=center><size=130%><color={colorSuspenso}><b>CALIFICACIÓN: NO APTO (\u2718)</b></color></size></align>");
-            documento.AppendLine($"<align=center><size=150%><color={colorSuspenso}><b>NOTA FINAL: {nota}.0 / 10</b></color></size></align>");
-            documento.AppendLine("<voffset=0.5em> </voffset>");
-            documento.AppendLine("<align=center><size=80%><color=#555555>Se recomienda revisar el manual de procedimiento y la guía de diagnóstico diferencial de la consulta.</color></size></align>");
+            folio += $"<align=center><size=140%><color={hexSuspenso}><b>CALIFICACIÓN: NO APTO {iconoCruz}</b></color></size></align>\n";
+            folio += $"<align=center><size=160%><color={hexSuspenso}><b>NOTA FINAL: {nota}.0 / 10</b></color></size></align>\n\n";
+            folio += $"<align=center><size=85%><color={hexPrincipal}>Se recomienda revisar el manual técnico de la consulta médica.</color></size></align>";
         }
 
-        // Asignamos el flujo de texto formateado al TextMeshPro de la UI
-        textoResultado.text = documento.ToString();
+        // Imprimimos todo el texto acumulado en la pantalla de Unity
+        textoResultado.text = folio;
     }
 }
