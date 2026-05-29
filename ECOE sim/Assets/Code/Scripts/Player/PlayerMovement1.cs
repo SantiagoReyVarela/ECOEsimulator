@@ -1,5 +1,7 @@
 using System;
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -56,8 +58,15 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        bool isMoving = move.magnitude > 0.1f;
-        animator.SetBool("IsWalking", isMoving);
+        if (SceneManager.GetActiveScene().name == "Partida")
+        {
+            bool isMoving = move.magnitude > 0.1f;
+            animator.SetBool("IsWalking", isMoving);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
 
         // --------- GRAVEDAD ---------
         if (controller.isGrounded && velocity.y < 0)
