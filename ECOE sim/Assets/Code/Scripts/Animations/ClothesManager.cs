@@ -3,11 +3,10 @@ using UnityEngine;
 
 public enum ClothType
 {
-    Cabeza,
-    Torso,
-    Piernas,
-    Pies,
-    Manos
+    Hair,
+    Chest,
+    Legs,
+    Feet
 }
 
 public class ClothesManager : MonoBehaviour
@@ -15,9 +14,31 @@ public class ClothesManager : MonoBehaviour
     [Header("Cuerpo")]
     [Tooltip("SkinnedMeshRenderer del cuerpo base")]
     public SkinnedMeshRenderer smrBody;
+    [Tooltip("SkinnedMeshRenderer de la cabeza")]
+    public SkinnedMeshRenderer smrHead;
 
-    [Header("Prueba de Equipado")]
-    public GameObject camisetaPruebaPrefab;
+    [Header("Catálogo de Ropa")]
+    public List<GameObject> hairPrefabs;
+    public List<GameObject> chestPrefabs;
+    public List<GameObject> legPrefabs;
+    public List<GameObject> feetPrefabs;
+
+    [Header("Configuración de la Cara")]
+    public int[] faceIndexList = { 0, 4, 8, 12, 16, 20, 24, 28 };
+    public int[] symptomsIndexList = { 0, 1, 2, 3, 4, 5, 6, 7 };
+
+    private string faceIndex = "_FaceIndex";
+    private string symptomIndex = "_SymptomIndex";
+    private string skinBlend = "_SkinBlend";
+
+    [Header("Paletas de Colores")]
+    public Color[] clothColors;
+    public Color[] hairColors;
+
+    private string clothColor = "_ClothColor";
+    private string hairTipColor = "_TipColor";
+    private string hairRootColor = "_RootColor";
+    private string hairShineColor = "_LightColor";
 
     private Dictionary<string, Transform> boneMap;
     private Dictionary<ClothType, GameObject> equipedCloth = new Dictionary<ClothType, GameObject>();
@@ -25,6 +46,7 @@ public class ClothesManager : MonoBehaviour
     void Start()
     {
         MapBaseRig();
+        RandomDressing();
     }
 
     private void MapBaseRig()
@@ -83,12 +105,14 @@ public class ClothesManager : MonoBehaviour
             string blendShapeName = smrBody.sharedMesh.GetBlendShapeName(i);
             int clothIndex = smrCloth.sharedMesh.GetBlendShapeIndex(blendShapeName);
 
-            if (clothIndex != -1) // Si la prenda tiene este Blend Shape
+            if (clothIndex != -1)
             {
                 float actualWeight = smrBody.GetBlendShapeWeight(i);
                 smrCloth.SetBlendShapeWeight(clothIndex, actualWeight);
             }
         }
+
+        ApplyColor(smrCloth, cat);
 
         Transform clothArmature = clothInstance.transform.Find("Armature");
         if (clothArmature != null)
@@ -99,12 +123,82 @@ public class ClothesManager : MonoBehaviour
         equipedCloth.Add(cat, clothInstance);
     }
 
-    // Prueba de uso
+    private void ApplyColor(SkinnedMeshRenderer smrCloth, ClothType cat)
+    {
+        if (smrCloth == null || smrCloth.material == null) return;
+
+        if (cat == ClothType.Hair)
+        {
+            if (hairColors == null || hairColors.Length == 0) return;
+            Color hairChoosenColor = hairColors[Random.Range(0, hairColors.Length)];
+
+            if (smrCloth.material.HasProperty(hairTipColor))
+            {
+                smrCloth.material.SetColor(hairTipColor, hairChoosenColor);
+                smrCloth.material.SetColor(hairRootColor, hairChoosenColor * 0.6f);
+
+                Color shineColor = Color.Lerp(hairChoosenColor, Color.white, 0.4f);
+                smrCloth.material.SetColor(hairShineColor, shineColor);
+            }
+        }
+        else
+        {
+            if (clothColors == null || clothColors.Length == 0) return;
+            Color clothChoosenColor = clothColors[Random.Range(0, clothColors.Length)];
+
+            if (smrCloth.material.HasProperty(clothColor))
+            {
+                smrCloth.material.SetColor(clothColor, clothChoosenColor);
+            }
+        }
+    }
+
+    public void RandomDressing()
+    {
+        float randomSkin = Random.Range(0f, 1f);
+        int randomFace = faceIndexList.Length > 0 ? faceIndexList[Random.Range(0, faceIndexList.Length)] : 0;
+        int randomSymptom = symptomsIndexList.Length > 0 ? symptomsIndexList[Random.Range(0, symptomsIndexList.Length)] : 0;
+
+        SkinnedMeshRenderer[] bodyParts = { smrBody, smrHead };
+
+
+        foreach (SkinnedMeshRenderer part in bodyParts)
+        {
+            if (part != null && part.materials != null)
+            {
+                Material[] materialInstances = part.materials;
+
+                foreach (Material mat in materialInstances)
+                {
+                    if (mat == null) continue;
+                    if (mat.HasProperty(skinBlend)) mat.SetFloat(skinBlend, randomSkin);
+                    if (mat.HasProperty(faceIndex)) mat.SetFloat(faceIndex, randomFace);
+                    if (mat.HasProperty(symptomIndex)) mat.SetFloat(symptomIndex, randomSymptom);
+                }
+
+                part.materials = materialInstances;
+            }
+        }
+
+        RandomEquip(hairPrefabs, ClothType.Hair);
+        RandomEquip(chestPrefabs, ClothType.Chest);
+        RandomEquip(legPrefabs, ClothType.Legs);
+        RandomEquip(feetPrefabs, ClothType.Feet);
+    }
+
+    private void RandomEquip(List<GameObject> prefabsList, ClothType category)
+    {
+        if (prefabsList == null || prefabsList.Count == 0) return;
+
+        int randomIndex = Random.Range(0, prefabsList.Count);
+        EquipCloth(prefabsList[randomIndex], category);
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && camisetaPruebaPrefab != null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            EquipCloth(camisetaPruebaPrefab, ClothType.Torso);
+            RandomDressing();
         }
     }
 }
