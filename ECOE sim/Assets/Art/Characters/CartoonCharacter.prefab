@@ -114,19 +114,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalRotation.x
@@ -134,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalRotation.z
@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -213,7 +213,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClothesManager
   smrBody: {fileID: 8767645622743114277}
-  camisetaPruebaPrefab: {fileID: 4009676446242475343, guid: 73ddec78ee925a64cb60a6286ba3fd5c, type: 3}
+  smrHead: {fileID: 5405683311501300307}
+  blendShapeMin: 0
+  blendShapeMax: 100
+  hairPrefabs:
+  - {fileID: 1386607851699831869, guid: 65881a3cb854e8340ad033a4263e3caa, type: 3}
+  - {fileID: 4989947501933866140, guid: 6a5712832c5bc0c498b756b8dba55f0a, type: 3}
+  - {fileID: 8116620559437314324, guid: 9e5472cf1ef186d4b8aef7fde66a472a, type: 3}
+  - {fileID: 5478526632016427371, guid: 70c7a95ae2ee9e24a93648853dcb0e57, type: 3}
+  - {fileID: 1341214938933450267, guid: 34942f3fe8bb4d34486062bc3386e39b, type: 3}
+  - {fileID: 3515691487264414541, guid: 2303cf1b87f7ed0429180748846683c2, type: 3}
+  - {fileID: 6052094705194246306, guid: d05dd2408bb983a489aaccccdb0053fa, type: 3}
+  - {fileID: 2703367788368402274, guid: 2360b0d91714101449df98ad6d18c6d5, type: 3}
+  - {fileID: 3591397514296272367, guid: f6acd03345727944d8b16beec9d2ec57, type: 3}
+  chestPrefabs:
+  - {fileID: 4009676446242475343, guid: 73ddec78ee925a64cb60a6286ba3fd5c, type: 3}
+  legPrefabs: []
+  feetPrefabs: []
+  faceIndexList: 0000000004000000080000000c0000001000000014000000180000001c000000
+  symptomsIndexList: 0000000001000000020000000300000004000000050000000600000007000000
+  clothColors:
+  - {r: 0.54509807, g: 0.54509807, b: 0.54509807, a: 0}
+  - {r: 0.17254902, g: 0.24313726, b: 0.3137255, a: 0}
+  - {r: 0.44705883, g: 0.18431373, b: 0.21568628, a: 0}
+  - {r: 0.35686275, g: 0.43137255, b: 0.3372549, a: 0}
+  - {r: 0.83137256, g: 0.6392157, b: 0.4509804, a: 0}
+  - {r: 0.7647059, g: 0.6901961, b: 0.5686275, a: 0}
+  - {r: 0.2901961, g: 0.4117647, b: 0.5176471, a: 0}
+  - {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 0}
+  hairColors:
+  - {r: 0.10196079, g: 0.10196079, b: 0.10196079, a: 0}
+  - {r: 0.2901961, g: 0.18823531, b: 0.09411766, a: 0}
+  - {r: 0.5411765, g: 0.3529412, b: 0.19607845, a: 0}
+  - {r: 0.7686275, g: 0.6431373, b: 0.48627454, a: 0}
+  - {r: 0.90196085, g: 0.7607844, b: 0.4784314, a: 0}
+  - {r: 0.6509804, g: 0.29411766, b: 0.16078432, a: 0}
+  - {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 0}
+  - {r: 0.87843144, g: 0.87843144, b: 0.87843144, a: 0}
 --- !u!114 &3755865893573334806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +267,11 @@ MonoBehaviour:
 --- !u!4 &1041910494484149239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
+  m_PrefabInstance: {fileID: 720335621688120348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5405683311501300307 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4396642182433536433, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
   m_PrefabInstance: {fileID: 720335621688120348}
   m_PrefabAsset: {fileID: 0}
 --- !u!137 &8767645622743114277 stripped

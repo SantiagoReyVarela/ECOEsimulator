@@ -17,6 +17,11 @@ public class ClothesManager : MonoBehaviour
     [Tooltip("SkinnedMeshRenderer de la cabeza")]
     public SkinnedMeshRenderer smrHead;
 
+    [Header("Complexión Física")]
+    public float blendShapeMin = 0f;
+    public float blendShapeMax = 100f;
+    private float[] blendShapesWeights;
+
     [Header("Catálogo de Ropa")]
     public List<GameObject> hairPrefabs;
     public List<GameObject> chestPrefabs;
@@ -159,6 +164,21 @@ public class ClothesManager : MonoBehaviour
         int randomFace = faceIndexList.Length > 0 ? faceIndexList[Random.Range(0, faceIndexList.Length)] : 0;
         int randomSymptom = symptomsIndexList.Length > 0 ? symptomsIndexList[Random.Range(0, symptomsIndexList.Length)] : 0;
 
+        if (smrBody != null)
+        {
+            int blendShapesNum = smrBody.sharedMesh.blendShapeCount;
+            blendShapesWeights = new float[blendShapesNum];
+
+            for (int i = 0; i < blendShapesNum; i++)
+            {
+                float randomWeight = Random.Range(blendShapeMin, blendShapeMax);
+
+                blendShapesWeights[i] = randomWeight;
+
+                smrBody.SetBlendShapeWeight(i, randomWeight);
+            }
+        }
+
         SkinnedMeshRenderer[] bodyParts = { smrBody, smrHead };
 
 
@@ -199,6 +219,31 @@ public class ClothesManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RandomDressing();
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (smrBody != null && blendShapesWeights != null)
+        {
+            for (int i = 0; i < blendShapesWeights.Length; i++)
+            {
+                smrBody.SetBlendShapeWeight(i, blendShapesWeights[i]);
+            }
+        }
+
+        if (smrHead != null && blendShapesWeights != null)
+        {
+            for (int i = 0; i < blendShapesWeights.Length; i++)
+            {
+                string nombreBs = smrBody.sharedMesh.GetBlendShapeName(i);
+                int headIndex = smrHead.sharedMesh.GetBlendShapeIndex(nombreBs);
+
+                if (headIndex != -1)
+                {
+                    smrHead.SetBlendShapeWeight(headIndex, blendShapesWeights[i]);
+                }
+            }
         }
     }
 }
