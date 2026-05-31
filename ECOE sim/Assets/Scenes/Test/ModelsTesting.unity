@@ -287,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
       propertyPath: hairPrefabs.Array.size
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
       propertyPath: chestPrefabs.Array.size
@@ -300,17 +300,33 @@ PrefabInstance:
     - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
       propertyPath: 'hairPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 5478526632016427371, guid: 70c7a95ae2ee9e24a93648853dcb0e57, type: 3}
+      objectReference: {fileID: 4989947501933866140, guid: 6a5712832c5bc0c498b756b8dba55f0a, type: 3}
     - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
       propertyPath: 'hairPrefabs.Array.data[2]'
       value: 
-      objectReference: {fileID: 2703367788368402274, guid: 2360b0d91714101449df98ad6d18c6d5, type: 3}
+      objectReference: {fileID: 8116620559437314324, guid: 9e5472cf1ef186d4b8aef7fde66a472a, type: 3}
     - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
       propertyPath: 'hairPrefabs.Array.data[3]'
       value: 
-      objectReference: {fileID: 6052094705194246306, guid: d05dd2408bb983a489aaccccdb0053fa, type: 3}
+      objectReference: {fileID: 5478526632016427371, guid: 70c7a95ae2ee9e24a93648853dcb0e57, type: 3}
     - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
       propertyPath: 'hairPrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1341214938933450267, guid: 34942f3fe8bb4d34486062bc3386e39b, type: 3}
+    - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
+      propertyPath: 'hairPrefabs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 3515691487264414541, guid: 2303cf1b87f7ed0429180748846683c2, type: 3}
+    - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
+      propertyPath: 'hairPrefabs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 6052094705194246306, guid: d05dd2408bb983a489aaccccdb0053fa, type: 3}
+    - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
+      propertyPath: 'hairPrefabs.Array.data[7]'
+      value: 
+      objectReference: {fileID: 2703367788368402274, guid: 2360b0d91714101449df98ad6d18c6d5, type: 3}
+    - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
+      propertyPath: 'hairPrefabs.Array.data[8]'
       value: 
       objectReference: {fileID: 3591397514296272367, guid: f6acd03345727944d8b16beec9d2ec57, type: 3}
     - target: {fileID: 1693409853721198793, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
