@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8353452913520919772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3262562215661692219}
+  - component: {fileID: 4196449302916075735}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3262562215661692219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8353452913520919772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.740118, y: -0.017152011, z: 0.023684308, w: 0.67184097}
+  m_LocalPosition: {x: -2.7160766, y: 1.9759579, z: -2.0326314}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -0.929, y: -33.286, z: 3.588}
+--- !u!220 &4196449302916075735
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8353452913520919772}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 3.421055, y: 1.0254908, z: 1.0131783}
+  - {x: 3.282665, y: 0.7133992, z: -1.050959}
+  - {x: 2.8908691, y: -2.3317726, z: 1.1415776}
+  - {x: 2.9989698, y: -2.739779, z: -0.81809497}
+  - {x: -2.554699, y: 1.4419469, z: 0.94702226}
+  - {x: -2.7146387, y: 1.393183, z: -1.1432558}
+  - {x: -2.8136964, y: -2.3791819, z: 1.4623623}
+  - {x: -2.7639427, y: -2.547613, z: -0.7058706}
+  - {x: -2.3569534, y: 0.7717124, z: 1.1143076}
+  - {x: 2.5077205, y: -2.275969, z: 0.3204969}
+  - {x: 1.8722147, y: -1.1656126, z: 0.20854098}
+  - {x: -2.0528839, y: -0.9855022, z: 0.16566916}
+  - {x: -0.63507897, y: -2.3486536, z: 0.6460508}
+  - {x: -1.4046835, y: 0.15822321, z: 1.1800516}
+  - {x: -1.6502281, y: 0.32807872, z: 0.37950075}
+  - {x: 0.41733053, y: 0.87617224, z: 0.33963352}
+  m_Dering: 1
