@@ -23,10 +23,10 @@ public class ClothesManager : MonoBehaviour
     private float[] blendShapesWeights;
 
     [Header("Catálogo de Ropa")]
-    public List<GameObject> hairPrefabs;
-    public List<GameObject> chestPrefabs;
-    public List<GameObject> legPrefabs;
-    public List<GameObject> feetPrefabs;
+    private List<GameObject> hairPrefabs;
+    private List<GameObject> chestPrefabs;
+    private List<GameObject> legPrefabs;
+    private List<GameObject> feetPrefabs;
 
     [Header("Configuración de la Cara")]
     public int[] faceIndexList = { 0, 4, 8, 12, 16, 20, 24, 28 };
@@ -48,10 +48,52 @@ public class ClothesManager : MonoBehaviour
     private Dictionary<string, Transform> boneMap;
     private Dictionary<ClothType, GameObject> equipedCloth = new Dictionary<ClothType, GameObject>();
 
+    void Awake()
+    {
+        LoadPrefabs();
+    }
+
     void Start()
     {
         MapBaseRig();
         RandomDressing();
+    }
+
+    private void LoadPrefabs()
+    {
+        hairPrefabs = new List<GameObject>();
+        chestPrefabs = new List<GameObject>();
+        legPrefabs = new List<GameObject>();
+        feetPrefabs = new List<GameObject>();
+
+        ClothItem[] allItems = Resources.LoadAll<ClothItem>("");
+
+        if (allItems.Length == 0)
+        {
+            Debug.LogWarning("No se han encontrado prendas");
+            return;
+        }
+
+        foreach (ClothItem item in allItems)
+        {
+            switch (item.category)
+            {
+                case ClothType.Hair:
+                    hairPrefabs.Add(item.gameObject);
+                    break;
+                case ClothType.Chest:
+                    chestPrefabs.Add(item.gameObject);
+                    break;
+                case ClothType.Legs:
+                    legPrefabs.Add(item.gameObject);
+                    break;
+                case ClothType.Feet:
+                    feetPrefabs.Add(item.gameObject);
+                    break;
+            }
+        }
+
+        Debug.Log($"Catálogo cargado: {hairPrefabs.Count} Pelos, {chestPrefabs.Count} Torsos, {legPrefabs.Count} Piernas, {feetPrefabs.Count} Zapatos.");
     }
 
     private void MapBaseRig()
