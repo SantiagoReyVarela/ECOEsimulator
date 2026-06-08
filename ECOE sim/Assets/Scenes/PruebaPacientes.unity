@@ -1352,13 +1352,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 1021983738}
     m_Modifications:
     - target: {fileID: 5823039619119508863, guid: 22455c132a231ce49809637e1c2bce17, type: 3}
+      propertyPath: m_MotionVectors
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823039619119508863, guid: 22455c132a231ce49809637e1c2bce17, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823039619119508863, guid: 22455c132a231ce49809637e1c2bce17, type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5823039619119508863, guid: 22455c132a231ce49809637e1c2bce17, type: 3}
       propertyPath: m_StitchLightmapSeams
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5823039619119508863, guid: 22455c132a231ce49809637e1c2bce17, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16baabedea225b249aad79d5279afd14, type: 2}
     - target: {fileID: 7635030954929054709, guid: 22455c132a231ce49809637e1c2bce17, type: 3}
       propertyPath: m_Name
       value: ClinicWallInteriorHalf (8)
@@ -3919,8 +3931,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5823039619119508863, guid: 45f9f94cc0c2bc0478224fd84a6180ab, type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5823039619119508863, guid: 45f9f94cc0c2bc0478224fd84a6180ab, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16baabedea225b249aad79d5279afd14, type: 2}
     - target: {fileID: 7635030954929054709, guid: 45f9f94cc0c2bc0478224fd84a6180ab, type: 3}
       propertyPath: m_Name
       value: ClinicWallInteriorWindow (2)
