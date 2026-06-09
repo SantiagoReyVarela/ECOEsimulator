@@ -169,9 +169,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1693409853721198793}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3755865893573334806}
   m_SourcePrefab: {fileID: 100100000, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
 --- !u!1 &377823804481268045 stripped
 GameObject:
@@ -216,8 +213,11 @@ MonoBehaviour:
   smrHead: {fileID: 5405683311501300307}
   blendShapeMin: 0
   blendShapeMax: 100
-  faceIndexList: 0000000004000000080000000c0000001000000014000000180000001c000000
-  symptomsIndexList: 0000000001000000020000000300000004000000050000000600000007000000
+  accesorieChance: 0.5
+  minFaceIndex: 0
+  maxFaceIndex: 32
+  minSymptomIndex: 0
+  maxSymptomIndex: 7
   clothColors:
   - {r: 0.681, g: 0.44, b: 0.645, a: 1}
   - {r: 0.2901961, g: 0.30588236, b: 0.4117647, a: 1}
@@ -256,20 +256,6 @@ MonoBehaviour:
   - {r: 0.5411765, g: 0.29411766, b: 0.40784314, a: 1}
   - {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 0}
   - {r: 0.844, g: 0.858, b: 0.851, a: 1}
---- !u!114 &3755865893573334806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377823804481268045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6ab42e263cb344f9680e63e23703a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MarchaController
-  animator: {fileID: 7707665080882208048}
-  velocidad: 1.5
 --- !u!4 &1041910494484149239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}

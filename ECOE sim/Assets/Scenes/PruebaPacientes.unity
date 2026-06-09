@@ -5528,17 +5528,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7822578935846571024, guid: 9dbb1a824f69a494fad6949173cfa644, type: 3}
   m_PrefabInstance: {fileID: 926837567}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &955840762 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3755865893573334806, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
-  m_PrefabInstance: {fileID: 1603654296}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6ab42e263cb344f9680e63e23703a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MarchaController
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -7632,7 +7621,7 @@ MonoBehaviour:
   manifestacionesUI: {fileID: 657254860289657487}
   validador: {fileID: 1627425311}
   imagenUI: {fileID: 273149110}
-  personaje: {fileID: 955840762}
+  personaje: {fileID: 1666307090}
 --- !u!114 &1271973894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9363,7 +9352,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 377823804481268045, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1666307090}
   m_SourcePrefab: {fileID: 100100000, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
 --- !u!1001 &1614307338
 PrefabInstance:
@@ -9697,6 +9689,30 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5319896073757589461, guid: b5c8e34328edac64a99aa528e727ae9c, type: 3}
   m_PrefabInstance: {fileID: 1654365896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1666307089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 377823804481268045, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
+  m_PrefabInstance: {fileID: 1603654296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1666307090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666307089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6ab42e263cb344f9680e63e23703a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MarchaController
+  animator: {fileID: 1666307092}
+  velocidad: 1.5
+--- !u!95 &1666307092 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7707665080882208048, guid: 4b04c24a49f064449935db5815fb4eba, type: 3}
+  m_PrefabInstance: {fileID: 1603654296}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1676200410
 PrefabInstance:
@@ -12289,7 +12305,7 @@ PrefabInstance:
     - target: {fileID: 7120469835395299093, guid: fd5e8631a71d9fb4e96d9e9206c789e9, type: 3}
       propertyPath: marchaController
       value: 
-      objectReference: {fileID: 955840762}
+      objectReference: {fileID: 1666307090}
     - target: {fileID: 7831904568206652143, guid: fd5e8631a71d9fb4e96d9e9206c789e9, type: 3}
       propertyPath: m_Name
       value: Canvas_PruebaPacientes
@@ -12301,7 +12317,11 @@ PrefabInstance:
     - target: {fileID: 8401048481399521444, guid: fd5e8631a71d9fb4e96d9e9206c789e9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 955840762}
+      objectReference: {fileID: 1666307090}
+    - target: {fileID: 8401048481399521444, guid: fd5e8631a71d9fb4e96d9e9206c789e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IniciarMarcha
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
