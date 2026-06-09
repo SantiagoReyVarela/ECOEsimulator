@@ -6,7 +6,8 @@ public enum ClothType
     Hair,
     Chest,
     Legs,
-    Feet
+    Feet,
+    Accessorie
 }
 
 public class ClothesManager : MonoBehaviour
@@ -27,10 +28,24 @@ public class ClothesManager : MonoBehaviour
     private List<GameObject> chestPrefabs;
     private List<GameObject> legPrefabs;
     private List<GameObject> feetPrefabs;
+    private List<GameObject> accessoriePrefabs;
+
+    [Header("Probabilidades")]
+    [Range(0f, 1f)]
+    [Tooltip("0 = Nunca lleva accesorio, 1 = Siempre lleva, 0.5 = 50% de probabilidad")]
+    public float accesorieChance = 0.5f;
 
     [Header("Configuración de la Cara")]
-    public int[] faceIndexList = { 0, 4, 8, 12, 16, 20, 24, 28 };
-    public int[] symptomsIndexList = { 0, 1, 2, 3, 4, 5, 6, 7 };
+    [Tooltip("Índice mínimo en el Atlas")]
+    public int minFaceIndex = 0;
+    [Tooltip("Índice máximo en el Atlas")]
+    public int maxFaceIndex = 32;
+
+    [Header("Configuración de Síntomas")]
+    [Tooltip("Índice mínimo en el Atlas")]
+    public int minSymptomIndex = 0;
+    [Tooltip("Índice máximo en el Atlas")]
+    public int maxSymptomIndex = 7;
 
     private string faceIndex = "_FaceIndex";
     private string symptomIndex = "_SymptomIndex";
@@ -65,6 +80,7 @@ public class ClothesManager : MonoBehaviour
         chestPrefabs = new List<GameObject>();
         legPrefabs = new List<GameObject>();
         feetPrefabs = new List<GameObject>();
+        accessoriePrefabs = new List<GameObject>();
 
         ClothItem[] allItems = Resources.LoadAll<ClothItem>("");
 
@@ -90,10 +106,13 @@ public class ClothesManager : MonoBehaviour
                 case ClothType.Feet:
                     feetPrefabs.Add(item.gameObject);
                     break;
+                case ClothType.Accessorie:
+                    accessoriePrefabs.Add(item.gameObject);
+                    break;
             }
         }
 
-        Debug.Log($"Catálogo cargado: {hairPrefabs.Count} Pelos, {chestPrefabs.Count} Torsos, {legPrefabs.Count} Piernas, {feetPrefabs.Count} Zapatos.");
+        Debug.Log($"Catálogo cargado: {hairPrefabs.Count} Pelos, {chestPrefabs.Count} Torsos, {legPrefabs.Count} Piernas, {feetPrefabs.Count} Zapatos, {accessoriePrefabs.Count} Accesorios.");
     }
 
     private void MapBaseRig()
@@ -111,11 +130,8 @@ public class ClothesManager : MonoBehaviour
         }
     }
 
-    public void EquipCloth(GameObject clothPrefab, ClothType cat)
+    public void RemoveCloth(ClothType cat)
     {
-        if (clothPrefab == null) return;
-        if (boneMap == null || boneMap.Count == 0) MapBaseRig();
-
         if (equipedCloth.ContainsKey(cat))
         {
             if (equipedCloth[cat] != null)
@@ -124,6 +140,14 @@ public class ClothesManager : MonoBehaviour
             }
             equipedCloth.Remove(cat);
         }
+    }
+
+    public void EquipCloth(GameObject clothPrefab, ClothType cat)
+    {
+        if (clothPrefab == null) return;
+        if (boneMap == null || boneMap.Count == 0) MapBaseRig();
+
+        RemoveCloth(cat);
 
         GameObject clothInstance = Instantiate(clothPrefab, transform);
         SkinnedMeshRenderer smrCloth = clothInstance.GetComponentInChildren<SkinnedMeshRenderer>();
@@ -174,6 +198,8 @@ public class ClothesManager : MonoBehaviour
     {
         if (smrCloth == null || smrCloth.material == null) return;
 
+        if (cat == ClothType.Accessorie) return;
+
         if (cat == ClothType.Hair)
         {
             if (hairColors == null || hairColors.Length == 0) return;
@@ -203,8 +229,8 @@ public class ClothesManager : MonoBehaviour
     public void RandomDressing()
     {
         float randomSkin = Random.Range(0f, 1f);
-        int randomFace = faceIndexList.Length > 0 ? faceIndexList[Random.Range(0, faceIndexList.Length)] : 0;
-        int randomSymptom = symptomsIndexList.Length > 0 ? symptomsIndexList[Random.Range(0, symptomsIndexList.Length)] : 0;
+        int randomFace = Random.Range(minFaceIndex, maxFaceIndex + 1);
+        int randomSymptom = Random.Range(minSymptomIndex, maxSymptomIndex + 1);
 
         if (smrBody != null)
         {
@@ -214,15 +240,12 @@ public class ClothesManager : MonoBehaviour
             for (int i = 0; i < blendShapesNum; i++)
             {
                 float randomWeight = Random.Range(blendShapeMin, blendShapeMax);
-
                 blendShapesWeights[i] = randomWeight;
-
                 smrBody.SetBlendShapeWeight(i, randomWeight);
             }
         }
 
         SkinnedMeshRenderer[] bodyParts = { smrBody, smrHead };
-
 
         foreach (SkinnedMeshRenderer part in bodyParts)
         {
@@ -246,6 +269,15 @@ public class ClothesManager : MonoBehaviour
         RandomEquip(chestPrefabs, ClothType.Chest);
         RandomEquip(legPrefabs, ClothType.Legs);
         RandomEquip(feetPrefabs, ClothType.Feet);
+
+        if (Random.value <= accesorieChance)
+        {
+            RandomEquip(accessoriePrefabs, ClothType.Accessorie);
+        }
+        else
+        {
+            RemoveCloth(ClothType.Accessorie);
+        }
     }
 
     private void RandomEquip(List<GameObject> prefabsList, ClothType category)

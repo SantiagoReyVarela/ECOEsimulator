@@ -55,5 +55,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 08413e3d777c53341962b402219d20e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5142482947348099138}
   m_SourcePrefab: {fileID: 100100000, guid: 08413e3d777c53341962b402219d20e5, type: 3}
+--- !u!1 &2053104388161179455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 08413e3d777c53341962b402219d20e5, type: 3}
+  m_PrefabInstance: {fileID: 1206822046205063790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5142482947348099138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053104388161179455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de07ee6b9eea68f45b623ba429d1fb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClothItem
+  category: 0

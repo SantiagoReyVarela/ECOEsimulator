@@ -59,9 +59,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af4f9a72d97b4c54a9d25002d80f5c01, type: 3}
       insertIndex: -1
       addedObject: {fileID: -9089853104534865093}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af4f9a72d97b4c54a9d25002d80f5c01, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6678259516816572100}
   m_SourcePrefab: {fileID: 100100000, guid: af4f9a72d97b4c54a9d25002d80f5c01, type: 3}
 --- !u!1 &7694540669080574887 stripped
 GameObject:
@@ -69,19 +66,6 @@ GameObject:
   m_PrefabInstance: {fileID: 7352432234128025334}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &-9089853104534865093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7694540669080574887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de07ee6b9eea68f45b623ba429d1fb0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClothItem
-  category: 0
---- !u!114 &6678259516816572100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
