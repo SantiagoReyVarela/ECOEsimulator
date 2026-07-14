@@ -114,9 +114,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b0070d9b5b9f94cba3914ea773de1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StaticClothing
-  smrBody: {fileID: 0}
-  staticHair: {fileID: 0}
-  staticChest: {fileID: 0}
-  staticLegs: {fileID: 0}
-  staticFeet: {fileID: 0}
-  staticAccessorie: {fileID: 0}
+  smrBody: {fileID: 4860227900727379499}
+  staticHair: {fileID: 5343222543434133380, guid: d674e5b8f2bcbb3479a0407a43ddccf6, type: 3}
+  staticChest: {fileID: 3764337178237597568, guid: 27db01b4ced0faf4e8a16750178acc04, type: 3}
+  staticLegs: {fileID: 738873324360621254, guid: 4674a11b6d498f24a97535f5f31b0438, type: 3}
+  staticFeet: {fileID: 6292777808623074680, guid: 4140e28c178bd934a95a432494e842ec, type: 3}
+  staticAccessorie: {fileID: 1181838309036663631, guid: 5ee317e0b94ea3b49b190dc6b0df7fb0, type: 3}
+--- !u!137 &4860227900727379499 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1129336619986618823, guid: 8320aa61d3b65f048acadbdd931ad313, type: 3}
+  m_PrefabInstance: {fileID: 3684285162123112466}
+  m_PrefabAsset: {fileID: 0}
